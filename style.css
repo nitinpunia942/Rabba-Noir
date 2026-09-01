@@ -1,0 +1,1942 @@
+/* =========================================================
+   RABBA NOIR
+   PREMIUM RESPONSIVE WEBSITE
+   Desktop | Tablet | Mobile
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background: #090909;
+    color: #f5f1e8;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+
+    background: rgba(9, 9, 9, 0.94);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+
+    z-index: 9999;
+}
+
+.nav-container {
+    width: min(1300px, 92%);
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(23px, 2.2vw, 30px);
+    font-weight: 600;
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #c9a96e;
+}
+
+
+/* NAVIGATION */
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #d0d0d0;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    transition: color .3s ease;
+}
+
+.navbar nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: #c9a96e;
+
+    transition: width .3s ease;
+}
+
+.navbar nav a:hover {
+    color: #c9a96e;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+
+/* MOBILE MENU */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #333;
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 9px;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background: #c9a96e;
+
+    margin: 5px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 120px 6% 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            #302519 0%,
+            #15110d 25%,
+            #090909 55%
+        );
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    width: min(560px, 50%);
+    flex-shrink: 0;
+}
+
+.eyebrow {
+    color: #c9a96e;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 8vw, 120px);
+
+    line-height: .84;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #c9a96e;
+}
+
+.hero-text {
+    max-width: 480px;
+
+    margin: 35px 0;
+
+    color: #888;
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 13px 25px;
+
+    font-size: 10px;
+    letter-spacing: 1.8px;
+
+    transition: .3s ease;
+}
+
+.primary-btn {
+    background: #c9a96e;
+    color: #090909;
+
+    border: 1px solid #c9a96e;
+}
+
+.primary-btn:hover {
+    background: transparent;
+    color: #c9a96e;
+}
+
+.secondary-btn {
+    border: 1px solid #444;
+    color: #aaa;
+}
+
+.secondary-btn:hover {
+    border-color: #c9a96e;
+    color: #c9a96e;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    width: min(600px, 48%);
+
+    height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 30px 40px rgba(0,0,0,.7));
+
+    transition: transform .5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    width: min(850px, 90%);
+
+    margin: auto;
+
+    padding: 120px 20px;
+
+    text-align: center;
+}
+
+.section-label {
+    color: #c9a96e;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.intro h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 76px);
+
+    line-height: .95;
+
+    font-weight: 500;
+}
+
+.intro h2 span {
+    color: #c9a96e;
+}
+
+.intro > p:last-child {
+    width: min(600px, 100%);
+
+    margin: 30px auto 0;
+
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   ATTAR PRODUCTS SECTION
+========================================================= */
+
+.products-section {
+    width: min(1350px, 92%);
+
+    margin: auto;
+
+    padding: 80px 0 130px;
+}
+
+
+/* HEADING */
+
+.section-heading {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 78px);
+
+    line-height: .9;
+
+    font-weight: 500;
+}
+
+.section-heading h2 span {
+    color: #c9a96e;
+}
+
+.section-description {
+    width: min(360px, 100%);
+
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.product-card {
+    min-width: 0;
+
+    background: #111;
+
+    border: 1px solid #242424;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #80683f;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+
+   IMPORTANT:
+   Keeps bottle images inside cards instead of
+   making them full screen.
+========================================================= */
+
+.product-image {
+    width: 100%;
+
+    height: 390px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #272016,
+            #121212 65%
+        );
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 22px;
+
+    transition: transform .5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.product-info {
+    padding: 25px;
+}
+
+.product-type {
+    color: #9c8150;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 7px;
+}
+
+.product-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(30px, 3vw, 38px);
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    min-height: 45px;
+}
+
+
+/* PRODUCT BOTTOM */
+
+.product-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #292929;
+}
+
+
+/* PRICE */
+
+.product-price {
+    color: #c9a96e;
+
+    font-size: 19px;
+
+    white-space: nowrap;
+}
+
+
+/* ORDER */
+
+.order-btn {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #c9a96e;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: color .3s ease;
+}
+
+.order-btn:hover {
+    color: #fff;
+}
+
+
+/* =========================================================
+   PERFUME SECTION
+   DIFFERENT DESIGN FROM ATTARS
+========================================================= */
+
+.perfume-section {
+    width: 100%;
+
+    padding: 130px 6%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #15110c,
+            #090909 60%
+        );
+
+    border-top: 1px solid #242424;
+
+    border-bottom: 1px solid #242424;
+}
+
+.perfume-layout {
+    width: min(1250px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: clamp(50px, 8vw, 120px);
+}
+
+
+/* PERFUME IMAGE */
+
+.perfume-image {
+    height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #332817,
+            #111 65%
+        );
+
+    border: 1px solid #312817;
+
+    overflow: hidden;
+}
+
+.perfume-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 35px;
+
+    filter:
+        drop-shadow(0 30px 35px rgba(0,0,0,.8));
+
+    transition: transform .5s ease;
+}
+
+.perfume-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* PERFUME CONTENT */
+
+.perfume-content {
+    max-width: 550px;
+}
+
+.perfume-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 78px);
+
+    line-height: .9;
+
+    font-weight: 500;
+}
+
+.perfume-content h2 span {
+    display: block;
+
+    color: #c9a96e;
+}
+
+.perfume-tagline {
+    margin: 28px 0 18px;
+
+    color: #e8dfce;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+.perfume-description {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* PERFUME DETAILS */
+
+.perfume-details {
+    display: flex;
+
+    gap: 35px;
+
+    margin: 35px 0;
+}
+
+.perfume-details div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.perfume-details span {
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.perfume-details strong {
+    color: #c9a96e;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    font-weight: 500;
+}
+
+
+/* PERFUME ORDER */
+
+.perfume-order-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    padding: 15px 20px;
+
+    border: 1px solid #c9a96e;
+
+    background: transparent;
+
+    color: #c9a96e;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.perfume-order-btn span {
+    font-size: 18px;
+}
+
+.perfume-order-btn:hover {
+    background: #c9a96e;
+
+    color: #090909;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+    width: min(1200px, 88%);
+
+    margin: auto;
+
+    padding: 130px 0;
+}
+
+.center {
+    display: block;
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 70px;
+}
+
+.feature {
+    border-top: 1px solid #333;
+
+    padding-top: 25px;
+}
+
+.feature-number {
+    color: #c9a96e;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    width: 100%;
+
+    padding: 120px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: clamp(50px, 8vw, 120px);
+
+    background: #0d0d0d;
+}
+
+.about-image {
+    width: 100%;
+
+    height: 560px;
+
+    overflow: hidden;
+
+    background: #151515;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.about-content {
+    max-width: 560px;
+}
+
+.about-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 76px);
+
+    line-height: .9;
+
+    font-weight: 500;
+}
+
+.about-content h2 span {
+    color: #c9a96e;
+}
+
+.about-content > p:not(.section-label) {
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin: 25px 0;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    width: 100%;
+
+    padding: 130px 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #2a2116,
+            #090909 65%
+        );
+}
+
+.contact-content {
+    width: min(700px, 100%);
+
+    margin: auto;
+}
+
+.contact-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    line-height: .9;
+
+    font-weight: 500;
+}
+
+.contact-content h2 span {
+    color: #c9a96e;
+}
+
+.contact-content > p:not(.section-label) {
+    color: #777;
+
+    max-width: 500px;
+
+    margin: 25px auto;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.contact-details {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 35px;
+}
+
+.contact-details a {
+    color: #c9a96e;
+
+    font-size: 12px;
+
+    transition: color .3s ease;
+}
+
+.contact-details a:hover {
+    color: #fff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: min(1250px, 88%);
+
+    margin: auto;
+
+    padding: 80px 0 30px;
+}
+
+.footer-top {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 60px;
+}
+
+.footer-brand .logo {
+    display: inline-block;
+}
+
+.footer-brand p {
+    color: #666;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-links h4 {
+    color: #c9a96e;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+.footer-links a {
+    color: #777;
+
+    font-size: 11px;
+
+    transition: color .3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   ORDER MODAL
+========================================================= */
+
+.order-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.84);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 10000;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s ease;
+}
+
+.order-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* ORDER BOX */
+
+.order-box {
+    position: relative;
+
+    width: min(500px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: clamp(25px, 5vw, 45px);
+
+    background: #111;
+
+    border: 1px solid #c9a96e;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.8);
+
+    transform: translateY(20px);
+
+    transition: transform .3s ease;
+}
+
+.order-modal.active .order-box {
+    transform: translateY(0);
+}
+
+
+/* CLOSE */
+
+.close-order {
+    position: absolute;
+
+    top: 12px;
+    right: 17px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.close-order:hover {
+    color: #c9a96e;
+}
+
+
+/* ORDER HEADING */
+
+.order-box h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(40px, 8vw, 58px);
+
+    line-height: .9;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.order-box h2 span {
+    color: #c9a96e;
+}
+
+
+/* SELECTED PRODUCT */
+
+.selected-product {
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    background: #191919;
+
+    border-left: 2px solid #c9a96e;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+.selected-product span {
+    letter-spacing: 1px;
+}
+
+.selected-product strong {
+    color: #c9a96e;
+
+    margin-left: 6px;
+}
+
+
+/* LABELS */
+
+.order-box label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+}
+
+
+/* INPUTS */
+
+.order-box input,
+.order-box textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 16px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #292929;
+
+    outline: none;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    transition: border-color .3s ease;
+}
+
+.order-box input:focus,
+.order-box textarea:focus {
+    border-color: #c9a96e;
+}
+
+.order-box textarea {
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+/* SUBMIT */
+
+.submit-order {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #c9a96e;
+
+    background: #c9a96e;
+
+    color: #090909;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.submit-order:hover {
+    background: transparent;
+
+    color: #c9a96e;
+}
+
+.submit-order:disabled {
+    opacity: .6;
+
+    cursor: wait;
+}
+
+
+/* SUCCESS */
+
+#orderMessage {
+    margin-top: 20px;
+}
+
+.success-message {
+    padding: 25px;
+
+    text-align: center;
+
+    border: 1px solid #30452f;
+
+    background: #101610;
+}
+
+.success-icon {
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9a96e;
+
+    border-radius: 50%;
+
+    color: #c9a96e;
+
+    font-size: 20px;
+}
+
+.success-message h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.success-message p {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* ERROR */
+
+.error-message {
+    padding: 15px;
+
+    text-align: center;
+
+    color: #e99;
+
+    background: #1a1010;
+
+    border: 1px solid #4a2929;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar nav {
+        gap: 25px;
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        gap: 40px;
+    }
+
+    .hero-content {
+        width: 52%;
+    }
+
+    .hero-image {
+        width: 45%;
+        height: 520px;
+    }
+
+    .product-image {
+        height: 330px;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .perfume-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .perfume-image {
+        height: 550px;
+    }
+
+    .about-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV + TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* NAV */
+
+    .navbar {
+        height: 70px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar nav {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px 20px 25px;
+
+        background: rgba(9,9,9,.98);
+
+        border-bottom: 1px solid #242424;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav a {
+        width: 100%;
+
+        padding: 15px;
+
+        text-align: center;
+    }
+
+    .navbar nav a::after {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding: 120px 25px 80px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 50px;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        font-size: clamp(62px, 15vw, 90px);
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: min(90%, 500px);
+
+        height: 500px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        padding: 90px 20px;
+    }
+
+
+    /* PRODUCTS */
+
+    .products-section {
+        width: 90%;
+
+        padding-top: 70px;
+    }
+
+    .section-heading {
+        display: block;
+
+        text-align: center;
+    }
+
+    .section-description {
+        margin: 25px auto 0;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* PERFUME */
+
+    .perfume-section {
+        padding: 90px 5%;
+    }
+
+    .perfume-layout {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .perfume-image {
+        height: 550px;
+    }
+
+    .perfume-content {
+        max-width: 650px;
+
+        margin: auto;
+
+        text-align: center;
+    }
+
+    .perfume-details {
+        justify-content: center;
+    }
+
+
+    /* FEATURES */
+
+    .features-section {
+        padding: 90px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        grid-template-columns: 1fr;
+
+        padding: 90px 5%;
+
+        text-align: center;
+    }
+
+    .about-image {
+        height: 500px;
+    }
+
+    .about-content {
+        margin: auto;
+    }
+
+
+    /* FOOTER */
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-container {
+        width: 100%;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 110px 20px 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(55px, 16vw, 78px);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: min(300px, 100%);
+    }
+
+    .hero-image {
+        width: 100%;
+
+        height: 420px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        width: 92%;
+
+        padding: 80px 10px;
+    }
+
+    .intro h2 {
+        font-size: clamp(45px, 13vw, 62px);
+    }
+
+
+    /* PRODUCT SECTION */
+
+    .products-section {
+        width: 92%;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(48px, 14vw, 65px);
+    }
+
+
+    /* ONE CARD PER ROW ON PHONE */
+
+    .product-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    /* PRODUCT IMAGE */
+
+    .product-image {
+        height: 380px;
+    }
+
+    .product-image img {
+        padding: 25px;
+    }
+
+
+    /* PRODUCT INFO */
+
+    .product-info {
+        padding: 22px;
+    }
+
+    .product-info h3 {
+        font-size: 34px;
+    }
+
+
+    /* PERFUME */
+
+    .perfume-section {
+        padding: 80px 20px;
+    }
+
+    .perfume-image {
+        height: 470px;
+    }
+
+    .perfume-image img {
+        padding: 25px;
+    }
+
+    .perfume-content h2 {
+        font-size: clamp(48px, 14vw, 65px);
+    }
+
+    .perfume-tagline {
+        font-size: 22px;
+    }
+
+    .perfume-details {
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        padding: 80px 20px;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+        padding: 90px 20px;
+    }
+
+    .contact-details {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        width: 88%;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    /* ORDER MODAL */
+
+    .order-box {
+        padding: 25px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 20px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero {
+        padding-top: 105px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .product-image {
+        height: 340px;
+    }
+
+    .product-info h3 {
+        font-size: 30px;
+    }
+
+    .product-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .order-btn {
+        padding-top: 5px;
+    }
+
+    .perfume-image {
+        height: 400px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    .hero {
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+    .hero-image {
+        height: 680px;
+    }
+
+    .product-image {
+        height: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   ULTRA LARGE
+========================================================= */
+
+@media (min-width: 1920px) {
+
+    .hero {
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+
+    .products-section {
+        max-width: 1450px;
+    }
+
+}
+/* =========================
+   PERFUME PRICE
+========================= */
+
+.perfume-price {
+    color: #c9a96e;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 25px 0;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram-link {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.instagram-icon {
+    width: 20px;
+    height: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9a96e;
+    border-radius: 6px;
+
+    color: #c9a96e;
+    font-size: 15px;
+
+    transition: .3s ease;
+}
+
+.instagram-link:hover .instagram-icon {
+    background: #c9a96e;
+    color: #090909;
+}
