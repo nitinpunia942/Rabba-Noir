@@ -32,7 +32,6 @@
 
         /* =====================================================
            PERFUME PRICE FONT
-           Same as Attar price
         ===================================================== */
 
         .perfume-section .product-price {
@@ -128,6 +127,201 @@
             padding-bottom: 90px;
         }
 
+
+        /* =====================================================
+           COMBO SECTION
+        ===================================================== */
+
+        .combo-section {
+            padding: 90px 0;
+        }
+
+        .combo-card {
+            max-width: 1100px;
+            margin: 50px auto 0;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow);
+
+            cursor: pointer;
+
+            transition: transform .3s ease,
+                        box-shadow .3s ease;
+        }
+
+        .combo-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .combo-image {
+            min-height: 420px;
+            overflow: hidden;
+        }
+
+        .combo-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .combo-content {
+            padding: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .combo-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .combo-content h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin: 0 0 12px;
+        }
+
+        .combo-content h3 span {
+            color: var(--gold);
+        }
+
+        .combo-description {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .combo-price {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .combo-current-price {
+            font-family: "Poppins", sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .combo-original-price {
+            color: var(--muted);
+            font-size: 12px;
+            text-decoration: line-through;
+        }
+
+        .combo-save {
+            display: inline-block;
+            padding: 5px 8px;
+            background: var(--gold);
+            color: #fff;
+            font-size: 8px;
+            letter-spacing: 1px;
+        }
+
+        .combo-choice {
+            margin: 5px 0 25px;
+        }
+
+        .combo-choice-label {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .combo-select {
+            width: 100%;
+            padding: 13px 14px;
+
+            background: transparent;
+            color: var(--text);
+
+            border: 1px solid var(--border);
+
+            font-family: "Poppins", sans-serif;
+            font-size: 12px;
+
+            cursor: pointer;
+        }
+
+        .combo-select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .combo-button {
+            display: inline-block;
+            align-self: flex-start;
+
+            padding: 13px 22px;
+
+            background: var(--text);
+            color: var(--card);
+
+            font-size: 9px;
+            letter-spacing: 1.5px;
+
+            transition: .3s ease;
+        }
+
+        .combo-card:hover .combo-button {
+            background: var(--gold);
+        }
+
+
+        /* =====================================================
+           MOBILE PRODUCT GRID
+           2 PRODUCTS PER ROW
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+
+            .combo-card {
+                grid-template-columns: 1fr;
+            }
+
+            .combo-image {
+                min-height: 280px;
+            }
+
+            .combo-image img {
+                min-height: 280px;
+            }
+
+            .combo-content {
+                padding: 28px 20px;
+            }
+
+            .combo-content h3 {
+                font-size: 32px;
+            }
+
+            .combo-section {
+                padding: 65px 0;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -174,7 +368,11 @@
             </a>
 
             <a href="#perfumes">
-                Perfume
+                Perfumes
+            </a>
+
+            <a href="#combos">
+                Combos
             </a>
 
             <a href="#about">
@@ -347,7 +545,7 @@
 
 
                 <p class="product-type">
-                    PERFUME
+                    Inspired by
                 </p>
 
 
@@ -376,16 +574,16 @@
                     <div class="price-details">
 
                         <span class="product-price">
-                            ₹1
+                            ₹799
                         </span>
 
-                        <!-- <span class="original-price">
+                        <span class="original-price">
                             ₹940
                         </span>
 
                         <span class="discount-badge">
                             15% OFF
-                        </span> -->
+                        </span>
 
                     </div>
 
@@ -407,7 +605,7 @@
 
 
         <!-- =================================================
-             PERFUME 1
+             RAGHBA PERFUME - OUT OF STOCK
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
@@ -417,8 +615,8 @@
             <a href="products/perfume-1.html"
                class="product-image">
 
-                <img src="images/perfume.jpg"
-                     alt="Rabba Noir Perfume 1">
+                <img src="images/perfume-2.jpg"
+                     alt="Rabba Noir Raghba Perfume">
 
             </a>
 
@@ -432,7 +630,7 @@
 
 
                 <h3>
-                    Perfume 1
+                    Raghba Perfume
                 </h3>
 
 
@@ -476,7 +674,7 @@
 
 
         <!-- =================================================
-             PERFUME 2
+             MOONLIGHT PERFUME - OUT OF STOCK
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
@@ -486,8 +684,8 @@
             <a href="products/perfume-2.html"
                class="product-image">
 
-                <img src="images/perfume.jpg"
-                     alt="Rabba Noir Perfume 2">
+                <img src="images/perfume-2.jpg"
+                     alt="Rabba Noir Moonlight Perfume">
 
             </a>
 
@@ -501,7 +699,7 @@
 
 
                 <h3>
-                    Perfume 2
+                    Moonlight Perfume
                 </h3>
 
 
@@ -545,7 +743,7 @@
 
 
         <!-- =================================================
-             PERFUME 3
+             HAWAS PERFUME - OUT OF STOCK
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
@@ -555,8 +753,8 @@
             <a href="products/perfume-3.html"
                class="product-image">
 
-                <img src="images/perfume.jpg"
-                     alt="Rabba Noir Perfume 3">
+                <img src="images/perfume-2.jpg"
+                     alt="Rabba Noir Hawas Perfume">
 
             </a>
 
@@ -570,7 +768,7 @@
 
 
                 <h3>
-                    Perfume 3
+                    Hawas Perfume
                 </h3>
 
 
@@ -663,7 +861,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/white-oud.html'">
 
-
             <a href="products/white-oud.html"
                class="product-image">
 
@@ -672,24 +869,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     White Oud
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -699,9 +891,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -719,7 +909,6 @@
 
                     </div>
 
-
                     <a href="products/white-oud.html"
                        class="order-btn">
 
@@ -727,9 +916,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -743,7 +930,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/japanese-musk.html'">
 
-
             <a href="products/japanese-musk.html"
                class="product-image">
 
@@ -752,24 +938,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Japanese Musk
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -779,9 +960,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -799,7 +978,6 @@
 
                     </div>
 
-
                     <a href="products/japanese-musk.html"
                        class="order-btn">
 
@@ -807,9 +985,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -823,7 +999,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/moonlight-sparkle.html'">
 
-
             <a href="products/moonlight-sparkle.html"
                class="product-image">
 
@@ -832,24 +1007,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Moonlight Sparkle
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -859,9 +1029,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -879,7 +1047,6 @@
 
                     </div>
 
-
                     <a href="products/moonlight-sparkle.html"
                        class="order-btn">
 
@@ -887,9 +1054,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -903,7 +1068,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/first-rain-mitti.html'">
 
-
             <a href="products/first-rain-mitti.html"
                class="product-image">
 
@@ -912,24 +1076,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     First Rain Mitti
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -939,9 +1098,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -959,7 +1116,6 @@
 
                     </div>
 
-
                     <a href="products/first-rain-mitti.html"
                        class="order-btn">
 
@@ -967,9 +1123,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -983,7 +1137,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/lomani.html'">
 
-
             <a href="products/lomani.html"
                class="product-image">
 
@@ -992,24 +1145,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Lomani
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -1018,9 +1166,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1038,7 +1184,6 @@
 
                     </div>
 
-
                     <a href="products/lomani.html"
                        class="order-btn">
 
@@ -1046,9 +1191,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -1062,7 +1205,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/noor.html'">
 
-
             <a href="products/noor.html"
                class="product-image">
 
@@ -1071,24 +1213,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Noor
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -1098,9 +1235,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1118,7 +1253,6 @@
 
                     </div>
 
-
                     <a href="products/noor.html"
                        class="order-btn">
 
@@ -1126,9 +1260,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -1142,7 +1274,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/cool-water.html'">
 
-
             <a href="products/cool-water.html"
                class="product-image">
 
@@ -1151,24 +1282,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Cool Water
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -1178,9 +1304,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1198,7 +1322,6 @@
 
                     </div>
 
-
                     <a href="products/cool-water.html"
                        class="order-btn">
 
@@ -1206,9 +1329,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -1216,50 +1337,42 @@
 
 
         <!-- =================================================
-             OUD NOIR - OUT OF STOCK
+             BACCARAT ROUGE ATTAR - OUT OF STOCK
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/oud-noir.html'">
 
-
             <a href="products/oud-noir.html"
                class="product-image">
 
                 <img src="images/White.jpg"
-                     alt="Rabba Noir Oud Noir Attar">
+                     alt="Rabba Noir Baccarat Rouge Attar">
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
-                    Oud Noir
+                    Baccarat Rouge Attar
                 </h3>
-
 
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
 
-
                 <p class="product-description">
 
-                    A deep and mysterious oud fragrance
-                    with a rich and sophisticated character.
+                    A deep and sophisticated fragrance
+                    with a rich and luxurious character.
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1269,14 +1382,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -1284,50 +1394,42 @@
 
 
         <!-- =================================================
-             ROYAL MUSK - OUT OF STOCK
+             RAGHBA ATTAR - OUT OF STOCK
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/royal-musk.html'">
 
-
             <a href="products/royal-musk.html"
                class="product-image">
 
-                <img src="images/Japanese.jpg"
-                     alt="Rabba Noir Royal Musk Attar">
+                <img src="images/raghba.jpg"
+                     alt="Rabba Noir Raghba Attar">
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
-                    Royal Musk
+                    Raghba Attar
                 </h3>
-
 
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
 
-
                 <p class="product-description">
 
-                    A smooth and luxurious musk fragrance
+                    A smooth and luxurious fragrance
                     with a refined and elegant character.
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1337,14 +1439,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -1358,33 +1457,27 @@
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/amber-wood.html'">
 
-
             <a href="products/amber-wood.html"
                class="product-image">
 
-                <img src="images/Mitti.jpg"
+                <img src="images/ember.jpg"
                      alt="Rabba Noir Amber Wood Attar">
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Amber Wood
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -1393,9 +1486,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1405,14 +1496,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -1426,7 +1514,6 @@
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/blue-oud.html'">
 
-
             <a href="products/blue-oud.html"
                class="product-image">
 
@@ -1435,24 +1522,19 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     ATTAR
                 </p>
 
-
                 <h3>
                     Blue Oud
                 </h3>
 
-
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
-
 
                 <p class="product-description">
 
@@ -1461,9 +1543,7 @@
 
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -1473,14 +1553,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -1488,6 +1565,169 @@
 
 
     </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMBO OFFERS
+========================================================= -->
+
+<section class="combo-section"
+         id="combos">
+
+
+    <div class="section-heading center">
+
+        <p class="section-label">
+            SPECIAL OFFER
+        </p>
+
+
+        <h2>
+
+            Khamrah
+            <span>
+                Combo
+            </span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+            Get Khamrah Perfume with any one
+            available Rabba Noir Attar for
+            a special combo price.
+
+        </p>
+
+    </div>
+
+
+    <article class="combo-card"
+             onclick="window.location.href='products/khamrah-combo.html'">
+
+
+        <div class="combo-image">
+
+            <img src="images/perfume.jpg"
+                 alt="Rabba Noir Khamrah Perfume and Attar Combo">
+
+        </div>
+
+
+        <div class="combo-content">
+
+
+            <p class="combo-label">
+                KHAMRAH + ANY 1 ATTAR
+            </p>
+
+
+            <h3>
+
+                Premium Fragrance
+                <span>
+                    Combo
+                </span>
+
+            </h3>
+
+
+            <p class="combo-description">
+
+                Get Khamrah Eau De Parfum
+                together with any one of our
+                available premium attars.
+
+                Choose your attar and enjoy
+                both fragrances for just ₹999.
+
+            </p>
+
+
+            <div class="combo-price">
+
+                <span class="combo-current-price">
+                    ₹999
+                </span>
+
+                <span class="combo-original-price">
+                    ₹1,298
+                </span>
+
+                <span class="combo-save">
+                    SAVE ₹299
+                </span>
+
+            </div>
+
+
+            <div class="combo-choice"
+                 onclick="event.stopPropagation();">
+
+                <label class="combo-choice-label"
+                       for="comboAttarHome">
+
+                    CHOOSE YOUR ATTAR
+
+                </label>
+
+
+                <select id="comboAttarHome"
+                        class="combo-select"
+                        onchange="window.location.href='products/khamrah-combo.html?attar=' + encodeURIComponent(this.value);">
+
+                    <option value=""
+                            selected
+                            disabled>
+
+                        Select an attar
+
+                    </option>
+
+                    <option value="White Oud">
+                        White Oud
+                    </option>
+
+                    <option value="Japanese Musk">
+                        Japanese Musk
+                    </option>
+
+                    <option value="Moonlight Sparkle">
+                        Moonlight Sparkle
+                    </option>
+
+                    <option value="First Rain Mitti">
+                        First Rain Mitti
+                    </option>
+
+                    <option value="Lomani">
+                        Lomani
+                    </option>
+
+                    <option value="Noor">
+                        Noor
+                    </option>
+
+                    <option value="Cool Water">
+                        Cool Water
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <span class="combo-button">
+                VIEW COMBO →
+            </span>
+
+
+        </div>
+
+    </article>
 
 </section>
 
@@ -1596,7 +1836,7 @@
 
     <div class="about-image">
 
-        <img src="images/hero.jpg"
+        <img src="images/herooooo.png"
              alt="Rabba Noir Fragrance Collection">
 
     </div>
@@ -1695,6 +1935,10 @@
 
             <a href="#perfumes">
                 Perfumes
+            </a>
+
+            <a href="#combos">
+                Combos
             </a>
 
             <a href="#about">

@@ -1,15 +1,21 @@
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.querySelector(".navbar nav");
 
-menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("active");
-});
+if (menuBtn && nav) {
 
-document.querySelectorAll(".navbar nav a").forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
+    menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
     });
-});
+
+    document.querySelectorAll(".navbar nav a").forEach(link => {
+
+        link.addEventListener("click", () => {
+            nav.classList.remove("active");
+        });
+
+    });
+
+}
 
 
 /* =========================================
@@ -22,26 +28,99 @@ const selectedProduct = document.getElementById("selectedProduct");
 const orderMessage = document.getElementById("orderMessage");
 
 
-/* GOOGLE APPS SCRIPT URL */
+/* =========================================
+   GOOGLE APPS SCRIPT URL
+========================================= */
 
 const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbxr4k6kjPznbMaCbtfZKcVJihCaF1qfj88X7X0DaWOKMM52KlcKNw1x0p_tDwH_gJkz/exec";
 
 
+/* =========================================
+   CURRENT ORDER INFORMATION
+========================================= */
+
 let currentProduct = "";
+
+let currentIsCombo = false;
+
+let currentComboAttar = "";
 
 
 /* =========================================
-   OPEN ORDER FORM
+   OPEN NORMAL PRODUCT ORDER FORM
 ========================================= */
 
 function openOrderForm(product) {
 
     currentProduct = product;
 
-    selectedProduct.textContent = product;
+    currentIsCombo = false;
 
-    orderModal.classList.add("active");
+    currentComboAttar = "";
+
+    if (selectedProduct) {
+        selectedProduct.textContent = product;
+    }
+
+    if (orderModal) {
+        orderModal.classList.add("active");
+    }
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* =========================================
+   OPEN COMBO ORDER FORM
+========================================= */
+
+function openComboOrder() {
+
+    const comboSelect =
+        document.getElementById("comboAttar");
+
+    if (!comboSelect) {
+
+        alert("Please select an attar.");
+
+        return;
+    }
+
+
+    const attar =
+        comboSelect.value.trim();
+
+
+    if (!attar) {
+
+        alert("Please select an attar.");
+
+        return;
+    }
+
+
+    currentComboAttar = attar;
+
+    currentProduct =
+        "Khamrah Perfume + " + attar;
+
+    currentIsCombo = true;
+
+
+    if (selectedProduct) {
+
+        selectedProduct.textContent =
+            currentProduct;
+
+    }
+
+
+    if (orderModal) {
+
+        orderModal.classList.add("active");
+
+    }
 
     document.body.style.overflow = "hidden";
 }
@@ -53,11 +132,20 @@ function openOrderForm(product) {
 
 function closeOrderForm() {
 
-    orderModal.classList.remove("active");
+    if (orderModal) {
+
+        orderModal.classList.remove("active");
+
+    }
 
     document.body.style.overflow = "";
 
-    orderMessage.innerHTML = "";
+    if (orderMessage) {
+
+        orderMessage.innerHTML = "";
+
+    }
+
 }
 
 
@@ -70,22 +158,39 @@ function loadRazorpay() {
     return new Promise((resolve, reject) => {
 
         if (window.Razorpay) {
+
             resolve();
+
             return;
         }
 
-        const script = document.createElement("script");
 
-        script.src = "https://checkout.razorpay.com/v1/checkout.js";
+        const script =
+            document.createElement("script");
+
+
+        script.src =
+            "https://checkout.razorpay.com/v1/checkout.js";
+
 
         script.onload = resolve;
 
+
         script.onerror = () => {
-            reject(new Error("Razorpay failed to load."));
+
+            reject(
+                new Error(
+                    "Razorpay failed to load."
+                )
+            );
+
         };
 
+
         document.body.appendChild(script);
+
     });
+
 }
 
 
@@ -93,345 +198,475 @@ function loadRazorpay() {
    SUBMIT ORDER
 ========================================= */
 
-orderForm.addEventListener("submit", async function (event) {
+if (orderForm) {
 
-    event.preventDefault();
+    orderForm.addEventListener(
+        "submit",
+        async function (event) {
 
-
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const phone =
-        document.getElementById("customerPhone").value.trim();
-
-    const quantity =
-        Number(document.getElementById("quantity").value);
-
-    const address =
-        document.getElementById("customerAddress").value.trim();
+            event.preventDefault();
 
 
-    if (phone.length !== 10) {
-
-        alert("Please enter a valid 10-digit mobile number.");
-
-        return;
-    }
-
-
-    if (!name || !address || quantity < 1) {
-
-        alert("Please fill all the required details.");
-
-        return;
-    }
+            const name =
+                document
+                    .getElementById("customerName")
+                    .value
+                    .trim();
 
 
-    const submitButton =
-        document.querySelector(".submit-order");
+            const phone =
+                document
+                    .getElementById("customerPhone")
+                    .value
+                    .trim();
 
 
-    submitButton.disabled = true;
-
-    submitButton.textContent = "STARTING PAYMENT...";
-
-
-    try {
-
-        /* LOAD RAZORPAY */
-
-        await loadRazorpay();
+            const quantity =
+                Number(
+                    document
+                        .getElementById("quantity")
+                        .value
+                );
 
 
-        /* CREATE PAYMENT ORDER */
+            const address =
+                document
+                    .getElementById("customerAddress")
+                    .value
+                    .trim();
 
-        const response = await fetch(
-            GOOGLE_SCRIPT_URL,
-            {
-                method: "POST",
 
-                headers: {
-                    "Content-Type":
-                        "text/plain;charset=utf-8"
-                },
+            /* =================================
+               BASIC VALIDATION
+            ================================= */
 
-                body: JSON.stringify({
+            if (phone.length !== 10) {
 
-                    action: "createPaymentOrder",
+                alert(
+                    "Please enter a valid 10-digit mobile number."
+                );
 
-                    name: name,
-
-                    phone: phone,
-
-                    product: currentProduct,
-
-                    quantity: quantity,
-
-                    address: address
-
-                })
+                return;
             }
-        );
 
 
-        const result =
-            await response.json();
+            if (
+                !name ||
+                !address ||
+                quantity < 1
+            ) {
+
+                alert(
+                    "Please fill all the required details."
+                );
+
+                return;
+            }
 
 
-        if (!result.success) {
+            /* =================================
+               COMBO VALIDATION
+            ================================= */
 
-            throw new Error(
-                result.error ||
-                "Unable to create payment."
-            );
+            if (
+                currentIsCombo &&
+                !currentComboAttar
+            ) {
 
-        }
+                alert(
+                    "Please select an attar for the combo."
+                );
 
-
-        /* =====================================
-           OPEN RAZORPAY CHECKOUT
-        ===================================== */
-
-        const options = {
-
-            key: result.keyId,
-
-            amount: result.amount,
-
-            currency: result.currency,
-
-            name: "Rabba Noir",
-
-            description:
-                currentProduct +
-                " × " +
-                quantity,
-
-            order_id:
-                result.razorpayOrderId,
+                return;
+            }
 
 
-            prefill: {
-
-                name: name,
-
-                contact: phone
-
-            },
+            const submitButton =
+                document.querySelector(
+                    ".submit-order"
+                );
 
 
-            notes: {
+            if (!submitButton) {
 
-                product: currentProduct,
+                alert(
+                    "Order button could not be found."
+                );
 
-                quantity: quantity
-
-            },
-
-
-            theme: {
-
-                color: "#111111"
-
-            },
+                return;
+            }
 
 
-            handler: async function (paymentResponse) {
+            submitButton.disabled = true;
 
-                submitButton.textContent =
-                    "VERIFYING PAYMENT...";
+            submitButton.textContent =
+                "STARTING PAYMENT...";
 
 
-                try {
+            try {
 
-                    /* ==============================
-                       VERIFY PAYMENT
-                    ============================== */
+                await loadRazorpay();
 
-                    const verifyResponse =
-                        await fetch(
-                            GOOGLE_SCRIPT_URL,
-                            {
-                                method: "POST",
 
-                                headers: {
-                                    "Content-Type":
-                                        "text/plain;charset=utf-8"
-                                },
+                /* =================================
+                   CREATE PAYMENT ORDER
+                ================================= */
 
-                                body: JSON.stringify({
+                const response =
+                    await fetch(
+                        GOOGLE_SCRIPT_URL,
+                        {
+                            method: "POST",
 
-                                    action:
-                                        "verifyPayment",
+                            headers: {
+                                "Content-Type":
+                                    "text/plain;charset=utf-8"
+                            },
 
-                                    razorpay_order_id:
-                                        paymentResponse
-                                            .razorpay_order_id,
+                            body: JSON.stringify({
 
-                                    razorpay_payment_id:
-                                        paymentResponse
-                                            .razorpay_payment_id,
+                                action:
+                                    "createPaymentOrder",
 
-                                    razorpay_signature:
-                                        paymentResponse
-                                            .razorpay_signature
+                                name:
+                                    name,
 
-                                })
+                                phone:
+                                    phone,
+
+                                product:
+                                    currentProduct,
+
+                                quantity:
+                                    quantity,
+
+                                address:
+                                    address,
+
+                                isCombo:
+                                    currentIsCombo,
+
+                                selectedAttar:
+                                    currentComboAttar
+
+                            })
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (!result.success) {
+
+                    throw new Error(
+                        result.error ||
+                        "Unable to create payment."
+                    );
+
+                }
+
+
+                /* =================================
+                   RAZORPAY CHECKOUT
+                ================================= */
+
+                const options = {
+
+                    key:
+                        result.keyId,
+
+                    amount:
+                        result.amount,
+
+                    currency:
+                        result.currency,
+
+                    name:
+                        "Rabba Noir",
+
+                    description:
+                        currentProduct +
+                        " × " +
+                        quantity,
+
+                    order_id:
+                        result.razorpayOrderId,
+
+                    prefill: {
+
+                        name:
+                            name,
+
+                        contact:
+                            phone
+
+                    },
+
+                    notes: {
+
+                        product:
+                            currentProduct,
+
+                        quantity:
+                            quantity,
+
+                        combo:
+                            currentIsCombo
+                                ? "Yes"
+                                : "No",
+
+                        selectedAttar:
+                            currentComboAttar
+
+                    },
+
+                    theme: {
+
+                        color:
+                            "#111111"
+
+                    },
+
+
+                    /* =================================
+                       PAYMENT SUCCESS
+                    ================================= */
+
+                    handler:
+                        async function (
+                            paymentResponse
+                        ) {
+
+                            submitButton.textContent =
+                                "VERIFYING PAYMENT...";
+
+
+                            try {
+
+                                const verifyResponse =
+                                    await fetch(
+                                        GOOGLE_SCRIPT_URL,
+                                        {
+                                            method:
+                                                "POST",
+
+                                            headers: {
+                                                "Content-Type":
+                                                    "text/plain;charset=utf-8"
+                                            },
+
+                                            body:
+                                                JSON.stringify({
+
+                                                    action:
+                                                        "verifyPayment",
+
+                                                    razorpay_order_id:
+                                                        paymentResponse
+                                                            .razorpay_order_id,
+
+                                                    razorpay_payment_id:
+                                                        paymentResponse
+                                                            .razorpay_payment_id,
+
+                                                    razorpay_signature:
+                                                        paymentResponse
+                                                            .razorpay_signature
+
+                                                })
+                                        }
+                                    );
+
+
+                                const verifyResult =
+                                    await verifyResponse.json();
+
+
+                                if (
+                                    !verifyResult.success
+                                ) {
+
+                                    throw new Error(
+                                        verifyResult.error ||
+                                        "Payment verification failed."
+                                    );
+
+                                }
+
+
+                                orderForm.reset();
+
+
+                                orderMessage.innerHTML = `
+
+                                    <div class="success-message">
+
+                                        <div class="success-icon">
+                                            ✓
+                                        </div>
+
+                                        <h3>
+                                            Payment Successful!
+                                        </h3>
+
+                                        <p>
+                                            Thank you for ordering
+                                            from Rabba Noir.
+                                        </p>
+
+                                        <p>
+                                            Order ID:
+                                            <strong>
+                                                ${verifyResult.orderId}
+                                            </strong>
+                                        </p>
+
+                                        <p>
+                                            Your order has been
+                                            confirmed.
+                                        </p>
+
+                                    </div>
+
+                                `;
+
+
+                            } catch (error) {
+
+                                console.error(
+                                    "Verification Error:",
+                                    error
+                                );
+
+
+                                orderMessage.innerHTML = `
+
+                                    <div class="error-message">
+
+                                        Payment was received,
+                                        but verification could
+                                        not be completed
+                                        automatically.
+
+                                        Please contact Rabba Noir
+                                        support.
+
+                                    </div>
+
+                                `;
+
                             }
-                        );
 
 
-                    const verifyResult =
-                        await verifyResponse.json();
+                            submitButton.disabled =
+                                false;
+
+                            submitButton.textContent =
+                                "PLACE ORDER";
+
+                        },
 
 
-                    if (!verifyResult.success) {
+                    /* =================================
+                       CHECKOUT CLOSED
+                    ================================= */
 
-                        throw new Error(
-                            verifyResult.error ||
-                            "Payment verification failed."
-                        );
+                    modal: {
+
+                        ondismiss:
+                            function () {
+
+                                submitButton.disabled =
+                                    false;
+
+                                submitButton.textContent =
+                                    "PLACE ORDER";
+
+                            }
 
                     }
 
+                };
 
-                    /* ==============================
-                       SUCCESS
-                    ============================== */
 
-                    orderForm.reset();
+                /* =================================
+                   OPEN RAZORPAY
+                ================================= */
 
-                    orderMessage.innerHTML = `
+                const razorpay =
+                    new Razorpay(options);
 
-                        <div class="success-message">
 
-                            <div class="success-icon">
-                                ✓
+                /* =================================
+                   PAYMENT FAILED
+                ================================= */
+
+                razorpay.on(
+                    "payment.failed",
+                    function () {
+
+                        orderMessage.innerHTML = `
+
+                            <div class="error-message">
+
+                                Payment failed or was
+                                cancelled.
+
+                                Please try again.
+
                             </div>
 
-                            <h3>
-                                Payment Successful!
-                            </h3>
-
-                            <p>
-                                Thank you for ordering
-                                from Rabba Noir.
-                            </p>
-
-                            <p>
-                                Order ID:
-                                <strong>
-                                    ${verifyResult.orderId}
-                                </strong>
-                            </p>
-
-                            <p>
-                                Your order has been
-                                confirmed.
-                            </p>
-
-                        </div>
-
-                    `;
+                        `;
 
 
-                } catch (error) {
-
-                    orderMessage.innerHTML = `
-
-                        <div class="error-message">
-
-                            Payment was received, but
-                            verification could not be
-                            completed automatically.
-
-                            Please contact Rabba Noir
-                            support.
-
-                        </div>
-
-                    `;
-
-                }
+                        submitButton.disabled =
+                            false;
 
 
-                submitButton.disabled = false;
+                        submitButton.textContent =
+                            "PLACE ORDER";
 
-                submitButton.textContent =
-                    "PLACE ORDER";
-
-            },
-
-
-            modal: {
-
-                ondismiss: function () {
-
-                    submitButton.disabled = false;
-
-                    submitButton.textContent =
-                        "PLACE ORDER";
-
-                }
-
-            }
-
-        };
+                    }
+                );
 
 
-        const razorpay =
-            new Razorpay(options);
+                razorpay.open();
 
 
-        razorpay.on(
-            "payment.failed",
-            function () {
+            } catch (error) {
+
+                console.error(
+                    "Payment Error:",
+                    error
+                );
+
 
                 orderMessage.innerHTML = `
 
                     <div class="error-message">
 
-                        Payment failed or was cancelled.
-                        Please try again.
+                        ${
+                            error.message ||
+                            "Something went wrong. Please try again."
+                        }
 
                     </div>
 
                 `;
 
-                submitButton.disabled = false;
+
+                submitButton.disabled =
+                    false;
+
 
                 submitButton.textContent =
                     "PLACE ORDER";
 
             }
-        );
 
+        }
+    );
 
-        razorpay.open();
-
-
-    } catch (error) {
-
-        console.error(error);
-
-
-        orderMessage.innerHTML = `
-
-            <div class="error-message">
-
-                ${error.message ||
-                "Something went wrong. Please try again."}
-
-            </div>
-
-        `;
-
-
-        submitButton.disabled = false;
-
-        submitButton.textContent =
-            "PLACE ORDER";
-
-    }
-
-});
+}

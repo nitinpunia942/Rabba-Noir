@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Rabba Noir Khamrah Perfume + Any 1 Attar Combo">
+
+    <title>Khamrah + Any 1 Attar | Rabba Noir</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="../style.css">
+
+
+    <style>
+
+        /* =====================================================
+           COMBO PRODUCT PAGE
+        ===================================================== */
+
+        .combo-product-page {
+            min-height: 100vh;
+            padding: 140px 6% 80px;
+        }
+
+
+        .combo-product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        /* =====================================================
+           PRODUCT IMAGE
+        ===================================================== */
+
+        .combo-product-image {
+            width: 100%;
+            background: var(--surface);
+
+            overflow: hidden;
+        }
+
+
+        .combo-product-image img {
+            width: 100%;
+            height: 600px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           PRODUCT INFORMATION
+        ===================================================== */
+
+        .combo-product-info {
+            padding: 20px 0;
+        }
+
+
+        .combo-product-type {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--gold);
+
+            margin-bottom: 12px;
+        }
+
+
+        .combo-product-info h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 58px;
+            line-height: 1.05;
+
+            font-weight: 600;
+
+            margin: 0 0 8px;
+        }
+
+
+        .combo-product-info h1 span {
+            color: var(--gold);
+        }
+
+
+        .combo-subtitle {
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            color: var(--muted);
+
+            margin-bottom: 25px;
+        }
+
+
+        .combo-description {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+
+            max-width: 500px;
+        }
+
+
+        /* =====================================================
+           PRICE
+        ===================================================== */
+
+        .combo-product-price {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 30px;
+        }
+
+
+        .combo-product-price .current-price {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 28px;
+
+            font-weight: 500;
+
+            color: var(--text);
+        }
+
+
+        .combo-product-price .old-price {
+            font-size: 13px;
+
+            color: var(--muted);
+
+            text-decoration: line-through;
+        }
+
+
+        .combo-product-price .save-price {
+            background: var(--gold);
+
+            color: #fff;
+
+            padding: 6px 9px;
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           ATTAR SELECT
+        ===================================================== */
+
+        .combo-select-box {
+            margin-bottom: 25px;
+        }
+
+
+        .combo-select-box label {
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .combo-product-select {
+            width: 100%;
+
+            max-width: 500px;
+
+            padding: 15px;
+
+            background: transparent;
+
+            color: var(--text);
+
+            border: 1px solid var(--border);
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 12px;
+
+            cursor: pointer;
+        }
+
+
+        .combo-product-select:focus {
+            outline: none;
+
+            border-color: var(--gold);
+        }
+
+
+        /* =====================================================
+           QUANTITY
+        ===================================================== */
+
+        .combo-quantity {
+            margin-bottom: 25px;
+        }
+
+
+        .combo-quantity label {
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .combo-quantity input {
+            width: 120px;
+
+            padding: 14px;
+
+            background: transparent;
+
+            color: var(--text);
+
+            border: 1px solid var(--border);
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 13px;
+        }
+
+
+        .combo-quantity input:focus {
+            outline: none;
+
+            border-color: var(--gold);
+        }
+
+
+        /* =====================================================
+           ORDER BUTTON
+        ===================================================== */
+
+        .combo-order-btn {
+            width: 100%;
+
+            max-width: 500px;
+
+            border: none;
+
+            padding: 16px 25px;
+
+            background: var(--text);
+
+            color: var(--card);
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+
+        .combo-order-btn:hover {
+            background: var(--gold);
+        }
+
+
+        /* =====================================================
+           BENEFITS
+        ===================================================== */
+
+        .combo-benefits {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 35px;
+
+            max-width: 500px;
+        }
+
+
+        .combo-benefit {
+            padding-top: 15px;
+
+            border-top: 1px solid var(--border);
+        }
+
+
+        .combo-benefit strong {
+            display: block;
+
+            font-size: 9px;
+
+            letter-spacing: .8px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .combo-benefit span {
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           BACK LINK
+        ===================================================== */
+
+        .combo-back-link {
+            display: inline-block;
+
+            margin-bottom: 35px;
+
+            color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+
+            transition: .3s ease;
+        }
+
+
+        .combo-back-link:hover {
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .combo-product-page {
+                padding: 110px 20px 60px;
+            }
+
+
+            .combo-product-container {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            .combo-product-image img {
+                height: 430px;
+            }
+
+
+            .combo-product-info h1 {
+                font-size: 45px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .combo-product-page {
+                padding: 100px 16px 50px;
+            }
+
+
+            .combo-product-image img {
+                height: 360px;
+            }
+
+
+            .combo-product-info h1 {
+                font-size: 38px;
+            }
+
+
+            .combo-benefits {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="../index.html"
+               class="logo">
+
+                RABBA <span>NOIR</span>
+
+            </a>
+
+
+            <button class="menu-btn"
+                    id="menuBtn"
+                    aria-label="Open Menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <nav>
+
+                <a href="../index.html#home">
+                    Home
+                </a>
+
+                <a href="../index.html#collection">
+                    Attars
+                </a>
+
+                <a href="../index.html#perfumes">
+                    Perfumes
+                </a>
+
+                <a href="../index.html#combos">
+                    Combos
+                </a>
+
+                <a href="../index.html#about">
+                    About
+                </a>
+
+                <a href="../index.html#footer">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         COMBO PRODUCT
+    ========================================================= -->
+
+    <main class="combo-product-page">
+
+
+        <div class="combo-product-container">
+
+
+            <!-- =================================================
+                 IMAGE
+            ================================================== -->
+
+            <div class="combo-product-image">
+
+                <img src="../images/perfume.jpg"
+                     alt="Rabba Noir Khamrah Perfume and Attar Combo">
+
+            </div>
+
+
+            <!-- =================================================
+                 INFORMATION
+            ================================================== -->
+
+            <div class="combo-product-info">
+
+
+                <a href="../index.html#combos"
+                   class="combo-back-link">
+
+                    ← BACK TO COMBOS
+
+                </a>
+
+
+                <p class="combo-product-type">
+
+                    SPECIAL COMBO OFFER
+
+                </p>
+
+
+                <h1>
+
+                    Khamrah +
+                    <span>
+                        Any 1 Attar
+                    </span>
+
+                </h1>
+
+
+                <p class="combo-subtitle">
+
+                    EAU DE PARFUM + PREMIUM ATTAR
+
+                </p>
+
+
+                <p class="combo-description">
+
+                    Get Rabba Noir Khamrah Eau De Parfum
+                    together with any one available premium
+                    attar of your choice.
+
+                    Enjoy this special fragrance combination
+                    for just ₹999.
+
+                </p>
+
+
+                <!-- PRICE -->
+
+                <div class="combo-product-price">
+
+                    <span class="current-price">
+                        ₹999
+                    </span>
+
+                    <span class="old-price">
+                        ₹1,298
+                    </span>
+
+                    <span class="save-price">
+                        SAVE ₹299
+                    </span>
+
+                </div>
+
+
+                <!-- ATTAR SELECTION -->
+
+                <div class="combo-select-box">
+
+                    <label for="comboAttar">
+
+                        CHOOSE YOUR ATTAR
+
+                    </label>
+
+
+                    <select id="comboAttar"
+                            class="combo-product-select">
+
+                        <option value="White Oud">
+                            White Oud
+                        </option>
+
+                        <option value="Japanese Musk">
+                            Japanese Musk
+                        </option>
+
+                        <option value="Moonlight Sparkle">
+                            Moonlight Sparkle
+                        </option>
+
+                        <option value="First Rain Mitti">
+                            First Rain Mitti
+                        </option>
+
+                        <option value="Lomani">
+                            Lomani
+                        </option>
+
+                        <option value="Noor">
+                            Noor
+                        </option>
+
+                        <option value="Cool Water">
+                            Cool Water
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="combo-quantity">
+
+                    <label for="comboQuantity">
+
+                        QUANTITY
+
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="comboQuantity"
+                        value="1"
+                        min="1"
+                        max="20"
+                    >
+
+                </div>
+
+
+                <!-- ORDER BUTTON -->
+
+                <button
+                    type="button"
+                    class="combo-order-btn"
+                    onclick="openComboOrder()">
+
+                    BUY COMBO — ₹999
+
+                </button>
+
+
+                <!-- BENEFITS -->
+
+                <div class="combo-benefits">
+
+
+                    <div class="combo-benefit">
+
+                        <strong>
+                            ✓ Secure Payment
+                        </strong>
+
+                        <span>
+                            100% Protected
+                        </span>
+
+                    </div>
+
+
+                    <div class="combo-benefit">
+
+                        <strong>
+                            ✓ Fast Delivery
+                        </strong>
+
+                        <span>
+                            Across India
+                        </span>
+
+                    </div>
+
+
+                    <div class="combo-benefit">
+
+                        <strong>
+                            ✓ Premium Quality
+                        </strong>
+
+                        <span>
+                            Long Lasting
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         ORDER MODAL
+    ========================================================= -->
+
+    <div class="order-modal"
+         id="orderModal">
+
+
+        <div class="order-box">
+
+
+            <button class="close-order"
+                    onclick="closeOrderForm()"
+                    aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <p class="section-label">
+                RABBA NOIR
+            </p>
+
+
+            <h2>
+
+                Place Your
+                <span>
+                    Order
+                </span>
+
+            </h2>
+
+
+            <form id="orderForm">
+
+
+                <div class="selected-product">
+
+                    <span>
+                        PRODUCT
+                    </span>
+
+                    <strong id="selectedProduct">
+                        Khamrah Perfume + White Oud
+                    </strong>
+
+                </div>
+
+
+                <label for="customerName">
+                    Your Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+
+                <label for="customerPhone">
+                    Mobile Number
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="10-digit mobile number"
+                    inputmode="numeric"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    autocomplete="tel"
+                    required
+                >
+
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+
+                <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    max="20"
+                    required
+                >
+
+
+                <label for="customerAddress">
+                    Delivery Address
+                </label>
+
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Enter your complete delivery address"
+                    rows="4"
+                    autocomplete="street-address"
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-order">
+
+                    PLACE ORDER
+
+                </button>
+
+
+            </form>
+
+
+            <div id="orderMessage"></div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         COMBO PAGE SETUP
+    ========================================================= -->
+
+    <script>
+
+        /* =====================================================
+           ALLOWED ATTARS
+        ===================================================== */
+
+        const comboAttar =
+            document.getElementById("comboAttar");
+
+        const comboQuantity =
+            document.getElementById("comboQuantity");
+
+
+        const allowedAttars = [
+            "White Oud",
+            "Japanese Musk",
+            "Moonlight Sparkle",
+            "First Rain Mitti",
+            "Lomani",
+            "Noor",
+            "Cool Water"
+        ];
+
+
+        /* =====================================================
+           READ ATTAR FROM HOMEPAGE URL
+        ===================================================== */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const selectedAttar =
+            params.get("attar");
+
+
+        if (
+            selectedAttar &&
+            allowedAttars.includes(selectedAttar)
+        ) {
+
+            comboAttar.value =
+                selectedAttar;
+
+        }
+
+
+        /* =====================================================
+           KEEP MODAL QUANTITY IN SYNC
+        ===================================================== */
+
+        comboQuantity.addEventListener(
+            "input",
+            function () {
+
+                const quantity =
+                    Number(comboQuantity.value);
+
+                const modalQuantity =
+                    document.getElementById("quantity");
+
+                if (
+                    Number.isInteger(quantity) &&
+                    quantity >= 1 &&
+                    quantity <= 20
+                ) {
+
+                    modalQuantity.value =
+                        quantity;
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIAL QUANTITY
+        ===================================================== */
+
+        document.getElementById("quantity").value =
+            comboQuantity.value;
+
+
+    </script>
+
+
+    <!-- EXISTING SITE JAVASCRIPT -->
+
+    <script src="../script.js"></script>
+
+
+</body>
+
+</html>
