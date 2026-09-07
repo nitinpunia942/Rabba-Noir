@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Oud Noir Attar | Rabba Noir</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="../index.html" class="logo">
+            RABBA <span>NOIR</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#collection">Attars</a>
+            <a href="../index.html#khamrah">Perfume</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#footer">Contact</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle">☾</button>
+
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PRODUCT PAGE ================= -->
+
+<main class="product-page">
+
+    <!-- BREADCRUMB -->
+
+    <div class="product-breadcrumb">
+
+        <a href="../index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="../index.html#collection">Attars</a>
+
+        <span>›</span>
+
+        <strong>Oud Noir</strong>
+
+    </div>
+
+
+    <!-- PRODUCT AREA -->
+
+    <section class="product-detail">
+
+        <!-- LEFT IMAGE -->
+
+        <div class="product-detail-image">
+
+            <img src="../images/White.jpg"
+                 alt="Oud Noir Attar">
+
+        </div>
+
+
+        <!-- RIGHT DETAILS -->
+
+        <div class="product-detail-info">
+
+            <p class="product-detail-label">
+                PREMIUM ATTAR
+            </p>
+
+            <h1>
+                Oud Noir
+            </h1>
+
+            <p class="product-tagline">
+                Dark. Rich. Mysterious.
+            </p>
+
+            <div class="gold-line"></div>
+
+            <p class="product-detail-description">
+                Oud Noir is a deep and sophisticated
+                fragrance with a rich character, created
+                for those who appreciate bold and
+                luxurious aromas.
+            </p>
+
+            <p class="product-detail-description">
+                Its warm and refined presence makes it
+                a distinctive choice for evenings,
+                special occasions and moments that
+                demand elegance.
+            </p>
+
+
+            <!-- PRODUCT FEATURES -->
+
+            <div class="product-features">
+
+                <div>
+                    <span>TYPE</span>
+                    <strong>ATTAR</strong>
+                </div>
+
+                <div>
+                    <span>SIZE</span>
+                    <strong>14 ML</strong>
+                </div>
+
+                <div>
+                    <span>ALCOHOL</span>
+                    <strong>FREE</strong>
+                </div>
+
+            </div>
+
+
+            <!-- OUT OF STOCK -->
+
+            <div class="out-of-stock-box">
+
+                <span class="out-of-stock">
+                    OUT OF STOCK
+                </span>
+
+                <p>
+                    This fragrance is currently
+                    unavailable.
+                </p>
+
+            </div>
+
+
+            <!-- BENEFITS -->
+
+            <div class="product-benefits">
+
+                <div>
+                    <strong>✓ Secure Payment</strong>
+                    <span>100% Protected</span>
+                </div>
+
+                <div>
+                    <strong>✓ Fast Delivery</strong>
+                    <span>Across India</span>
+                </div>
+
+                <div>
+                    <strong>✓ Premium Quality</strong>
+                    <span>Long Lasting</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="../script.js"></script>
+
+<script>
+
+/* THEME */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        if (
+            document.body.classList.contains("dark-mode")
+        ) {
+            themeToggle.textContent = "☀";
+        } else {
+            themeToggle.textContent = "☾";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

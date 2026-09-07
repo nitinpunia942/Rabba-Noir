@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfume 2 | Rabba Noir</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="../index.html" class="logo">
+            RABBA <span>NOIR</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#collection">Attars</a>
+            <a href="../index.html#khamrah">Perfume</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#footer">Contact</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle">☾</button>
+
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PRODUCT PAGE ================= -->
+
+<main class="product-page">
+
+    <!-- BREADCRUMB -->
+
+    <div class="product-breadcrumb">
+
+        <a href="../index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="../index.html#khamrah">Perfume</a>
+
+        <span>›</span>
+
+        <strong>Perfume 2</strong>
+
+    </div>
+
+
+    <!-- PRODUCT AREA -->
+
+    <section class="product-detail">
+
+        <!-- LEFT IMAGE -->
+
+        <div class="product-detail-image">
+
+            <img src="../images/perfume.jpg"
+                 alt="Perfume 2">
+
+        </div>
+
+
+        <!-- RIGHT DETAILS -->
+
+        <div class="product-detail-info">
+
+            <p class="product-detail-label">
+                PREMIUM PERFUME
+            </p>
+
+            <h1>
+                Perfume 2
+            </h1>
+
+            <p class="product-tagline">
+                Fresh. Refined. Effortless.
+            </p>
+
+            <div class="gold-line"></div>
+
+            <p class="product-detail-description">
+                Perfume 2 is a fresh and sophisticated
+                fragrance designed for those who prefer
+                a clean, elegant and contemporary scent.
+            </p>
+
+            <p class="product-detail-description">
+                Versatile and graceful, it is perfect for
+                everyday wear while adding a refined touch
+                to every occasion.
+            </p>
+
+
+            <!-- PRODUCT FEATURES -->
+
+            <div class="product-features">
+
+                <div>
+                    <span>TYPE</span>
+                    <strong>PERFUME</strong>
+                </div>
+
+                <div>
+                    <span>SIZE</span>
+                    <strong>100 ML</strong>
+                </div>
+
+                <div>
+                    <span>CHARACTER</span>
+                    <strong>PREMIUM</strong>
+                </div>
+
+            </div>
+
+
+            <!-- OUT OF STOCK -->
+
+            <div class="out-of-stock-box">
+
+                <span class="out-of-stock">
+                    OUT OF STOCK
+                </span>
+
+                <p>
+                    This fragrance is currently
+                    unavailable.
+                </p>
+
+            </div>
+
+
+            <!-- BENEFITS -->
+
+            <div class="product-benefits">
+
+                <div>
+                    <strong>✓ Secure Payment</strong>
+                    <span>100% Protected</span>
+                </div>
+
+                <div>
+                    <strong>✓ Fast Delivery</strong>
+                    <span>Across India</span>
+                </div>
+
+                <div>
+                    <strong>✓ Premium Quality</strong>
+                    <span>Long Lasting</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="../script.js"></script>
+
+<script>
+
+/* THEME */
+
+const themeToggle =
+    document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        if (
+            document.body.classList.contains("dark-mode")
+        ) {
+            themeToggle.textContent = "☀";
+        } else {
+            themeToggle.textContent = "☾";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

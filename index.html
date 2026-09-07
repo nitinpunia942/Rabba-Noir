@@ -13,9 +13,7 @@
 
     <title>Rabba Noir | Premium Fragrances</title>
 
-
-    <!-- Google Fonts -->
-
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -26,11 +24,111 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
           rel="stylesheet">
 
-
-    <!-- CSS -->
-
+    <!-- MAIN CSS -->
     <link rel="stylesheet"
           href="style.css">
+
+    <style>
+
+        /* =====================================================
+           PERFUME PRICE FONT
+           Same as Attar price
+        ===================================================== */
+
+        .perfume-section .product-price {
+            font-family: "Poppins", sans-serif;
+        }
+
+
+        /* =====================================================
+           DISCOUNT DETAILS
+        ===================================================== */
+
+        .price-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .original-price {
+            color: var(--muted);
+            font-size: 11px;
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            padding: 5px 8px;
+
+            background: var(--gold);
+            color: #fff;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 8px;
+            font-weight: 500;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           OUT OF STOCK
+        ===================================================== */
+
+        .out-of-stock-card {
+            cursor: pointer;
+        }
+
+        .out-of-stock-card .product-image img {
+            opacity: .65;
+        }
+
+        .out-of-stock-card .product-price {
+            color: #888;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .out-of-stock-btn {
+            color: #888;
+
+            font-size: 8px;
+            letter-spacing: 1px;
+
+            border: 1px solid #aaa;
+
+            padding: 8px 10px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           PRODUCT CARD CLICK
+        ===================================================== */
+
+        .product-card {
+            cursor: pointer;
+        }
+
+        .product-card .order-btn,
+        .product-card .product-image {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           PERFUME SECTION SPACING
+        ===================================================== */
+
+        .perfume-section {
+            padding-bottom: 90px;
+        }
+
+    </style>
 
 </head>
 
@@ -38,9 +136,9 @@
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
      NAVBAR
-===================================================== -->
+========================================================= -->
 
 <header class="navbar">
 
@@ -67,15 +165,25 @@
 
         <nav>
 
-            <a href="#home">Home</a>
+            <a href="#home">
+                Home
+            </a>
 
-            <a href="#attars">Attars</a>
+            <a href="#collection">
+                Attars
+            </a>
 
-            <a href="#perfume">Perfume</a>
+            <a href="#perfumes">
+                Perfume
+            </a>
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
-            <a href="#footer">Contact</a>
+            <a href="#footer">
+                Contact
+            </a>
 
         </nav>
 
@@ -84,13 +192,13 @@
 </header>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
 <section class="hero"
          id="home">
+
 
     <div class="hero-content">
 
@@ -104,7 +212,9 @@
             A Scent
             <br>
 
-            <span>Beyond Ordinary.</span>
+            <span>
+                Beyond Ordinary.
+            </span>
 
         </h1>
 
@@ -120,40 +230,35 @@
 
         <div class="hero-buttons">
 
-            <a href="#attars"
+            <a href="#perfumes"
                class="primary-btn">
 
                 EXPLORE COLLECTION
 
             </a>
 
-
-            
-
         </div>
 
     </div>
 
 
-
-    <!-- HERO IMAGE -->
-
     <div class="hero-image">
 
-        <img src="images/Head.png"
+        <img src="images/ne.png"
              alt="Rabba Noir Fragrance">
 
     </div>
 
+
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      INTRO
-===================================================== -->
+========================================================= -->
 
 <section class="intro">
+
 
     <p class="section-label">
         RABBA NOIR
@@ -163,7 +268,9 @@
     <h2>
 
         Fragrance that
-        <span>defines you.</span>
+        <span>
+            defines you.
+        </span>
 
     </h2>
 
@@ -176,35 +283,363 @@
 
     </p>
 
+
 </section>
 
 
+<!-- =========================================================
+     PREMIUM PERFUMES
+========================================================= -->
 
-<!-- =====================================================
-     ATTAR COLLECTION
-===================================================== -->
-
-<section class="products-section"
-         id="attars">
-
-
-    <div class="section-heading">
-
-        <div>
-
-            <p class="section-label">
-                THE COLLECTION
-            </p>
+<section class="collection-section perfume-section"
+         id="perfumes">
 
 
-            <h2>
+    <div class="section-heading center">
 
-                Premium
-                <span>Attars</span>
+        <p class="section-label">
+            OUR COLLECTION
+        </p>
 
-            </h2>
 
-        </div>
+        <h2>
+
+            Premium
+            <span>
+                Perfumes
+            </span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+            Signature fragrances crafted
+            for memorable moments and
+            lasting impressions.
+
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- =================================================
+             KHAMRAH
+        ================================================== -->
+
+        <article class="product-card"
+                 onclick="window.location.href='products/khamrah.html'">
+
+
+            <a href="products/khamrah.html"
+               class="product-image">
+
+                <img src="images/perfume.jpg"
+                     alt="Rabba Noir Khamrah Perfume">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    PERFUME
+                </p>
+
+
+                <h3>
+                    Khamrah
+                </h3>
+
+
+                <h5>
+                    Eau De Parfum
+                </h5>
+
+
+                <p class="product-description">
+
+                    A rich and luxurious fragrance
+                    designed for special occasions,
+                    evenings and unforgettable moments.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹1
+                        </span>
+
+                        <!-- <span class="original-price">
+                            ₹940
+                        </span>
+
+                        <span class="discount-badge">
+                            15% OFF
+                        </span> -->
+
+                    </div>
+
+
+                    <a href="products/khamrah.html"
+                       class="order-btn">
+
+                        VIEW PRODUCT →
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PERFUME 1
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/perfume-1.html'">
+
+
+            <a href="products/perfume-1.html"
+               class="product-image">
+
+                <img src="images/perfume.jpg"
+                     alt="Rabba Noir Perfume 1">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    PERFUME
+                </p>
+
+
+                <h3>
+                    Perfume 1
+                </h3>
+
+
+                <h5>
+                    Eau De Parfum
+                </h5>
+
+
+                <p class="product-description">
+
+                    A distinctive fragrance crafted
+                    for an elegant and memorable
+                    presence.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PERFUME 2
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/perfume-2.html'">
+
+
+            <a href="products/perfume-2.html"
+               class="product-image">
+
+                <img src="images/perfume.jpg"
+                     alt="Rabba Noir Perfume 2">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    PERFUME
+                </p>
+
+
+                <h3>
+                    Perfume 2
+                </h3>
+
+
+                <h5>
+                    Eau De Parfum
+                </h5>
+
+
+                <p class="product-description">
+
+                    A refined and captivating fragrance
+                    designed to leave a lasting
+                    impression.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             PERFUME 3
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/perfume-3.html'">
+
+
+            <a href="products/perfume-3.html"
+               class="product-image">
+
+                <img src="images/perfume.jpg"
+                     alt="Rabba Noir Perfume 3">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    PERFUME
+                </p>
+
+
+                <h3>
+                    Perfume 3
+                </h3>
+
+
+                <h5>
+                    Eau De Parfum
+                </h5>
+
+
+                <p class="product-description">
+
+                    A bold and sophisticated fragrance
+                    created for unforgettable occasions.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PREMIUM ATTARS
+========================================================= -->
+
+<section class="collection-section"
+         id="collection">
+
+
+    <div class="section-heading center">
+
+        <p class="section-label">
+            OUR COLLECTION
+        </p>
+
+
+        <h2>
+
+            Premium
+            <span>
+                Attars
+            </span>
+
+        </h2>
 
 
         <p class="section-description">
@@ -218,28 +653,28 @@
     </div>
 
 
-
-    <!-- =================================================
-         7 ATTARS
-    ================================================== -->
-
     <div class="product-grid">
 
 
+        <!-- =================================================
+             WHITE OUD
+        ================================================== -->
 
-        <!-- 01 WHITE OUD -->
+        <article class="product-card"
+                 onclick="window.location.href='products/white-oud.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/white-oud.html"
+               class="product-image">
 
                 <img src="images/White.jpg"
                      alt="Rabba Noir White Oud Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -250,13 +685,16 @@
                     White Oud
                 </h3>
 
-                <h5>14-ML / Alcohol free</h5>
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
 
                     A rich and elegant oud fragrance
-                    with a smooth, sophisticated
+                    with a smooth and sophisticated
                     character.
 
                 </p>
@@ -264,39 +702,59 @@
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹499
-                    </span>
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹499
+                        </span>
+
+                        <span class="original-price">
+                            ₹665
+                        </span>
+
+                        <span class="discount-badge">
+                            25% OFF
+                        </span>
+
+                    </div>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('White Oud')">
+                    <a href="products/white-oud.html"
+                       class="order-btn">
 
-                        ORDER NOW →
+                        VIEW PRODUCT →
 
-                    </button>
+                    </a>
+
 
                 </div>
+
 
             </div>
 
         </article>
 
 
+        <!-- =================================================
+             JAPANESE MUSK
+        ================================================== -->
 
-        <!-- 02 JAPANESE MUSK -->
+        <article class="product-card"
+                 onclick="window.location.href='products/japanese-musk.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/japanese-musk.html"
+               class="product-image">
 
                 <img src="images/Japanese.jpg"
                      alt="Rabba Noir Japanese Musk Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -306,7 +764,11 @@
                 <h3>
                     Japanese Musk
                 </h3>
-                <h5>14-ML / Alcohol free</h5>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
@@ -320,39 +782,59 @@
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹499
-                    </span>
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹499
+                        </span>
+
+                        <span class="original-price">
+                            ₹665
+                        </span>
+
+                        <span class="discount-badge">
+                            25% OFF
+                        </span>
+
+                    </div>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('Japanese Musk')">
+                    <a href="products/japanese-musk.html"
+                       class="order-btn">
 
-                        ORDER NOW →
+                        VIEW PRODUCT →
 
-                    </button>
+                    </a>
+
 
                 </div>
+
 
             </div>
 
         </article>
 
 
+        <!-- =================================================
+             MOONLIGHT SPARKLE
+        ================================================== -->
 
-        <!-- 03 MOONLIGHT SPARKLE -->
+        <article class="product-card"
+                 onclick="window.location.href='products/moonlight-sparkle.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/moonlight-sparkle.html"
+               class="product-image">
 
                 <img src="images/moon.jpg"
                      alt="Rabba Noir Moonlight Sparkle Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -362,52 +844,77 @@
                 <h3>
                     Moonlight Sparkle
                 </h3>
-                <h5>14-ML / Alcohol free</h5>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
 
                     A bright and enchanting fragrance
-                    with a smooth, sparkling character.
+                    with a smooth and sparkling
+                    character.
 
                 </p>
 
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹499
-                    </span>
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹499
+                        </span>
+
+                        <span class="original-price">
+                            ₹665
+                        </span>
+
+                        <span class="discount-badge">
+                            25% OFF
+                        </span>
+
+                    </div>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('Moonlight Sparkle')">
+                    <a href="products/moonlight-sparkle.html"
+                       class="order-btn">
 
-                        ORDER NOW →
+                        VIEW PRODUCT →
 
-                    </button>
+                    </a>
+
 
                 </div>
+
 
             </div>
 
         </article>
 
 
+        <!-- =================================================
+             FIRST RAIN MITTI
+        ================================================== -->
 
-        <!-- 04 FIRST RAIN MITTI -->
+        <article class="product-card"
+                 onclick="window.location.href='products/first-rain-mitti.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/first-rain-mitti.html"
+               class="product-image">
 
                 <img src="images/Mitti.jpg"
                      alt="Rabba Noir First Rain Mitti Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -417,7 +924,11 @@
                 <h3>
                     First Rain Mitti
                 </h3>
-                <h5>14-ML / Alcohol free</h5>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
@@ -431,39 +942,59 @@
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹599
-                    </span>
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹599
+                        </span>
+
+                        <span class="original-price">
+                            ₹749
+                        </span>
+
+                        <span class="discount-badge">
+                            20% OFF
+                        </span>
+
+                    </div>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('First Rain Mitti')">
+                    <a href="products/first-rain-mitti.html"
+                       class="order-btn">
 
-                        ORDER NOW →
+                        VIEW PRODUCT →
 
-                    </button>
+                    </a>
+
 
                 </div>
+
 
             </div>
 
         </article>
 
 
+        <!-- =================================================
+             LOMANI
+        ================================================== -->
 
-        <!-- 05 LOMANI -->
+        <article class="product-card"
+                 onclick="window.location.href='products/lomani.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/lomani.html"
+               class="product-image">
 
                 <img src="images/lomani.jpg"
                      alt="Rabba Noir Lomani Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -473,53 +1004,76 @@
                 <h3>
                     Lomani
                 </h3>
-                <h5>14-ML / Alcohol free</h5>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
 
                     A bold and charismatic fragrance
-                    made for confident everyday
-                    wear.
+                    made for confident everyday wear.
 
                 </p>
 
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹449
-                    </span>
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹449
+                        </span>
+
+                        <span class="original-price">
+                            ₹548
+                        </span>
+
+                        <span class="discount-badge">
+                            18% OFF
+                        </span>
+
+                    </div>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('Lomani')">
+                    <a href="products/lomani.html"
+                       class="order-btn">
 
-                        ORDER NOW →
+                        VIEW PRODUCT →
 
-                    </button>
+                    </a>
+
 
                 </div>
+
 
             </div>
 
         </article>
 
 
+        <!-- =================================================
+             NOOR
+        ================================================== -->
 
-        <!-- 06 NOOR -->
+        <article class="product-card"
+                 onclick="window.location.href='products/noor.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/noor.html"
+               class="product-image">
 
                 <img src="images/noor.jpg"
                      alt="Rabba Noir Noor Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -529,7 +1083,11 @@
                 <h3>
                     Noor
                 </h3>
-                <h5>14-ML / Alcohol free</h5>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
@@ -543,39 +1101,59 @@
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹449
-                    </span>
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹449
+                        </span>
+
+                        <span class="original-price">
+                            ₹548
+                        </span>
+
+                        <span class="discount-badge">
+                            18% OFF
+                        </span>
+
+                    </div>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('Noor')">
+                    <a href="products/noor.html"
+                       class="order-btn">
 
-                        ORDER NOW →
+                        VIEW PRODUCT →
 
-                    </button>
+                    </a>
+
 
                 </div>
+
 
             </div>
 
         </article>
 
 
+        <!-- =================================================
+             COOL WATER
+        ================================================== -->
 
-        <!-- 07 COOL WATER -->
+        <article class="product-card"
+                 onclick="window.location.href='products/cool-water.html'">
 
-        <article class="product-card">
 
-            <div class="product-image">
+            <a href="products/cool-water.html"
+               class="product-image">
 
                 <img src="images/cool_water.jpg"
                      alt="Rabba Noir Cool Water Attar">
 
-            </div>
+            </a>
 
 
             <div class="product-info">
+
 
                 <p class="product-type">
                     ATTAR
@@ -585,7 +1163,11 @@
                 <h3>
                     Cool Water
                 </h3>
-                <h5>14-ML / Alcohol free</h5>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
 
                 <p class="product-description">
@@ -599,19 +1181,306 @@
 
                 <div class="product-bottom">
 
-                    <span class="product-price">
-                        ₹449
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            ₹449
+                        </span>
+
+                        <span class="original-price">
+                            ₹548
+                        </span>
+
+                        <span class="discount-badge">
+                            18% OFF
+                        </span>
+
+                    </div>
+
+
+                    <a href="products/cool-water.html"
+                       class="order-btn">
+
+                        VIEW PRODUCT →
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             OUD NOIR - OUT OF STOCK
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/oud-noir.html'">
+
+
+            <a href="products/oud-noir.html"
+               class="product-image">
+
+                <img src="images/White.jpg"
+                     alt="Rabba Noir Oud Noir Attar">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    ATTAR
+                </p>
+
+
+                <h3>
+                    Oud Noir
+                </h3>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
+
+
+                <p class="product-description">
+
+                    A deep and mysterious oud fragrance
+                    with a rich and sophisticated character.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
                     </span>
 
 
-                    <button class="order-btn"
-                            onclick="openOrderForm('Cool Water')">
+                </div>
 
-                        ORDER NOW →
 
-                    </button>
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             ROYAL MUSK - OUT OF STOCK
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/royal-musk.html'">
+
+
+            <a href="products/royal-musk.html"
+               class="product-image">
+
+                <img src="images/Japanese.jpg"
+                     alt="Rabba Noir Royal Musk Attar">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    ATTAR
+                </p>
+
+
+                <h3>
+                    Royal Musk
+                </h3>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
+
+
+                <p class="product-description">
+
+                    A smooth and luxurious musk fragrance
+                    with a refined and elegant character.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
+                    </span>
+
 
                 </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             AMBER WOOD - OUT OF STOCK
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/amber-wood.html'">
+
+
+            <a href="products/amber-wood.html"
+               class="product-image">
+
+                <img src="images/Mitti.jpg"
+                     alt="Rabba Noir Amber Wood Attar">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    ATTAR
+                </p>
+
+
+                <h3>
+                    Amber Wood
+                </h3>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
+
+
+                <p class="product-description">
+
+                    A warm woody fragrance with a rich,
+                    elegant and timeless character.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             BLUE OUD - OUT OF STOCK
+        ================================================== -->
+
+        <article class="product-card out-of-stock-card"
+                 onclick="window.location.href='products/blue-oud.html'">
+
+
+            <a href="products/blue-oud.html"
+               class="product-image">
+
+                <img src="images/moon.jpg"
+                     alt="Rabba Noir Blue Oud Attar">
+
+            </a>
+
+
+            <div class="product-info">
+
+
+                <p class="product-type">
+                    ATTAR
+                </p>
+
+
+                <h3>
+                    Blue Oud
+                </h3>
+
+
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
+
+
+                <p class="product-description">
+
+                    A fresh and modern oud fragrance
+                    with a clean and confident character.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+
+                    <div class="price-details">
+
+                        <span class="product-price">
+                            OUT OF STOCK
+                        </span>
+
+                    </div>
+
+
+                    <span class="out-of-stock-btn">
+                        OUT OF STOCK
+                    </span>
+
+
+                </div>
+
 
             </div>
 
@@ -623,95 +1492,9 @@
 </section>
 
 
-
-<!-- =====================================================
-     KHAMRAH PERFUME
-     DIFFERENT FROM ATTAR SECTION
-===================================================== -->
-
-<section class="perfume-section" id="perfume">
-
-    <div class="perfume-layout">
-
-        <!-- PERFUME IMAGE -->
-        <div class="perfume-image">
-            <img src="images/perfume.jpg"
-                 alt="Rabba Noir Khamrah Perfume">
-        </div>
-
-        <!-- PERFUME CONTENT -->
-        <div class="perfume-content">
-
-            <p class="section-label">
-                Inspired By
-            </p>
-
-            <h2>
-                Khamrah
-                <span>Perfume</span>
-            </h2>
-
-            <p class="perfume-tagline">
-                Made to be noticed.
-                Remembered to be desired.
-            </p>
-
-            <p class="perfume-description">
-                Experience a richer fragrance
-                designed for special occasions,
-                evenings and unforgettable moments.
-
-                <br><br>
-
-                Unlike our concentrated attars,
-                Khamrah is presented as a
-                statement fragrance.
-            </p>
-
-            <!-- PRICE -->
-            <div class="perfume-price">
-                ₹799
-            </div>
-
-            <div class="perfume-details">
-
-                <div>
-                    <span>TYPE</span>
-                    <strong>EAU DE PARFUM</strong>
-                </div>
-
-                <div>
-                    <span>COLLECTION</span>
-                    <strong>SIGNATURE</strong>
-                </div>
-
-                <div>
-                    <span>STYLE</span>
-                    <strong>LUXURY</strong>
-                </div>
-
-            </div>
-
-            <button class="perfume-order-btn"
-                    onclick="openOrderForm('Khamrah Perfume')">
-
-                ORDER KHAMRAH
-
-                <span>→</span>
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      WHY RABBA NOIR
-===================================================== -->
+========================================================= -->
 
 <section class="features-section">
 
@@ -726,12 +1509,13 @@
         <h2>
 
             Made for
-            <span>lasting impressions.</span>
+            <span>
+                lasting impressions.
+            </span>
 
         </h2>
 
     </div>
-
 
 
     <div class="features-grid">
@@ -757,7 +1541,6 @@
         </div>
 
 
-
         <div class="feature">
 
             <div class="feature-number">
@@ -776,7 +1559,6 @@
             </p>
 
         </div>
-
 
 
         <div class="feature">
@@ -804,10 +1586,9 @@
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      ABOUT
-===================================================== -->
+========================================================= -->
 
 <section class="about-section"
          id="about">
@@ -823,6 +1604,7 @@
 
     <div class="about-content">
 
+
         <p class="section-label">
             OUR STORY
         </p>
@@ -831,7 +1613,9 @@
         <h2>
 
             More than
-            <span>a fragrance.</span>
+            <span>
+                a fragrance.
+            </span>
 
         </h2>
 
@@ -862,24 +1646,17 @@
 
         </p>
 
+
     </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
-<footer>
+<footer id="footer">
 
 
     <div class="footer-top">
@@ -912,12 +1689,12 @@
                 Home
             </a>
 
-            <a href="#attars">
+            <a href="#collection">
                 Attars
             </a>
 
-            <a href="#perfume">
-                Perfume
+            <a href="#perfumes">
+                Perfumes
             </a>
 
             <a href="#about">
@@ -927,23 +1704,21 @@
         </div>
 
 
-        <div class="footer-links" id="footer">
+        <div class="footer-links">
 
-    <h4>
-        SOCIAL
-    </h4>
+            <h4>
+                SOCIAL
+            </h4>
 
-    <a href="https://www.instagram.com/rabba._01/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="instagram-link">
+            <a href="https://www.instagram.com/rabba._01/"
+               target="_blank"
+               rel="noopener noreferrer">
 
-        <span class="instagram-icon">◎</span>
-        Instagram
+                Instagram
 
-    </a>
+            </a>
 
-</div>
+        </div>
 
 
     </div>
@@ -955,7 +1730,6 @@
             © 2026 Rabba Noir. All Rights Reserved.
         </p>
 
-
         <p>
             Crafted with passion.
         </p>
@@ -966,10 +1740,9 @@
 </footer>
 
 
-
-<!-- =====================================================
+<!-- =========================================================
      ORDER MODAL
-===================================================== -->
+========================================================= -->
 
 <div class="order-modal"
      id="orderModal">
@@ -995,15 +1768,15 @@
         <h2>
 
             Place Your
-            <span>Order</span>
+            <span>
+                Order
+            </span>
 
         </h2>
 
 
         <form id="orderForm">
 
-
-            <!-- PRODUCT -->
 
             <div class="selected-product">
 
@@ -1018,11 +1791,10 @@
             </div>
 
 
-            <!-- NAME -->
-
             <label for="customerName">
                 Your Name
             </label>
+
 
             <input
                 type="text"
@@ -1033,11 +1805,10 @@
             >
 
 
-            <!-- PHONE -->
-
             <label for="customerPhone">
                 Mobile Number
             </label>
+
 
             <input
                 type="tel"
@@ -1051,11 +1822,10 @@
             >
 
 
-            <!-- QUANTITY -->
-
             <label for="quantity">
                 Quantity
             </label>
+
 
             <input
                 type="number"
@@ -1067,11 +1837,10 @@
             >
 
 
-            <!-- ADDRESS -->
-
             <label for="customerAddress">
                 Delivery Address
             </label>
+
 
             <textarea
                 id="customerAddress"
@@ -1081,8 +1850,6 @@
                 required
             ></textarea>
 
-
-            <!-- SUBMIT -->
 
             <button
                 type="submit"
@@ -1103,7 +1870,13 @@
 
 </div>
 
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script src="script.js"></script>
+
 
 </body>
 
