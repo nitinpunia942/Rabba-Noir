@@ -1310,11 +1310,19 @@ footer {
         width: auto !important;
         min-width: 82px !important;
         max-width: 90px !important;
-        height: 68px !important;
+        height: 38px !important;
         padding: 0 12px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
         font-size: 8px !important;
         letter-spacing: 1px !important;
-        line-height: 38px !important;
+        line-height: normal !important;
+
+        border: 1px solid var(--gold) !important;
+        background: transparent !important;
         white-space: nowrap !important;
     }
 }
