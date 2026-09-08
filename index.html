@@ -293,8 +293,107 @@
 
             .product-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 14px;
+                gap: 10px;
             }
+
+            /* Compact product cards */
+            .product-card {
+                min-width: 0;
+                overflow: hidden;
+            }
+
+            /* Larger image area */
+            .product-card .product-image {
+                height: 190px;
+                display: block;
+                overflow: hidden;
+            }
+
+            .product-card .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            /* Compact product information */
+            .product-card .product-info {
+                padding: 12px 10px 13px;
+            }
+
+            .product-card .product-type {
+                font-size: 7px;
+                letter-spacing: 1.2px;
+                margin-bottom: 4px;
+            }
+
+            .product-card h3 {
+                font-size: 18px;
+                line-height: 1.05;
+                margin-bottom: 4px;
+            }
+
+            .product-card h5 {
+                font-size: 8px;
+                line-height: 1.3;
+                margin-bottom: 7px;
+            }
+
+            /* Short descriptions */
+            .product-card .product-description {
+                font-size: 8px;
+                line-height: 1.45;
+
+                margin-bottom: 10px;
+
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            /* Product bottom */
+            .product-card .product-bottom {
+                gap: 7px;
+                align-items: center;
+            }
+
+            .product-card .price-details {
+                gap: 4px;
+                flex-wrap: wrap;
+            }
+
+            .product-card .product-price {
+                font-size: 12px;
+            }
+
+            .product-card .original-price {
+                font-size: 8px;
+            }
+
+            .product-card .discount-badge {
+                font-size: 6px;
+                padding: 3px 5px;
+                letter-spacing: .5px;
+            }
+
+            .product-card .order-btn {
+                font-size: 7px;
+                padding: 7px 6px;
+                letter-spacing: .7px;
+                white-space: nowrap;
+            }
+
+            .product-card .out-of-stock-btn {
+                font-size: 6px;
+                padding: 6px 5px;
+                letter-spacing: .5px;
+            }
+
+
+            /* =================================================
+               COMBO MOBILE
+            ================================================= */
 
             .combo-card {
                 grid-template-columns: 1fr;
@@ -302,10 +401,12 @@
 
             .combo-image {
                 min-height: 280px;
+                height: 280px;
             }
 
             .combo-image img {
                 min-height: 280px;
+                height: 280px;
             }
 
             .combo-content {
@@ -318,6 +419,48 @@
 
             .combo-section {
                 padding: 65px 0;
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE SCREENS
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .product-grid {
+                gap: 8px;
+            }
+
+            .product-card .product-image {
+                height: 165px;
+            }
+
+            .product-card .product-info {
+                padding: 10px 8px 11px;
+            }
+
+            .product-card h3 {
+                font-size: 16px;
+            }
+
+            .product-card h5 {
+                font-size: 7px;
+            }
+
+            .product-card .product-description {
+                font-size: 7px;
+            }
+
+            .product-card .product-price {
+                font-size: 11px;
+            }
+
+            .product-card .order-btn {
+                font-size: 6px;
+                padding: 6px 5px;
             }
 
         }
@@ -397,13 +540,11 @@
 <section class="hero"
          id="home">
 
-
     <div class="hero-content">
 
         <p class="eyebrow">
             THE ART OF FRAGRANCE
         </p>
-
 
         <h1>
 
@@ -416,7 +557,6 @@
 
         </h1>
 
-
         <p class="hero-text">
 
             Discover premium fragrances crafted
@@ -424,7 +564,6 @@
             impression.
 
         </p>
-
 
         <div class="hero-buttons">
 
@@ -447,7 +586,6 @@
 
     </div>
 
-
 </section>
 
 
@@ -457,11 +595,9 @@
 
 <section class="intro">
 
-
     <p class="section-label">
         RABBA NOIR
     </p>
-
 
     <h2>
 
@@ -472,7 +608,6 @@
 
     </h2>
 
-
     <p>
 
         At Rabba Noir, we believe fragrance
@@ -480,7 +615,6 @@
         a memory and a statement.
 
     </p>
-
 
 </section>
 
@@ -492,13 +626,11 @@
 <section class="collection-section perfume-section"
          id="perfumes">
 
-
     <div class="section-heading center">
 
         <p class="section-label">
             OUR COLLECTION
         </p>
-
 
         <h2>
 
@@ -508,7 +640,6 @@
             </span>
 
         </h2>
-
 
         <p class="section-description">
 
@@ -531,7 +662,6 @@
         <article class="product-card"
                  onclick="window.location.href='products/khamrah.html'">
 
-
             <a href="products/khamrah.html"
                class="product-image">
 
@@ -540,36 +670,25 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     Inspired by
                 </p>
 
-
                 <h3>
                     Khamrah
                 </h3>
-
 
                 <h5>
                     Eau De Parfum
                 </h5>
 
-
                 <p class="product-description">
-
-                    A rich and luxurious fragrance
-                    designed for special occasions,
-                    evenings and unforgettable moments.
-
+                    A rich and luxurious...
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -587,7 +706,6 @@
 
                     </div>
 
-
                     <a href="products/khamrah.html"
                        class="order-btn">
 
@@ -595,9 +713,7 @@
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -605,12 +721,11 @@
 
 
         <!-- =================================================
-             RAGHBA PERFUME - OUT OF STOCK
+             RAGHBA PERFUME
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/perfume-1.html'">
-
 
             <a href="products/perfume-1.html"
                class="product-image">
@@ -620,36 +735,25 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     PERFUME
                 </p>
 
-
                 <h3>
                     Raghba Perfume
                 </h3>
-
 
                 <h5>
                     Eau De Parfum
                 </h5>
 
-
                 <p class="product-description">
-
-                    A distinctive fragrance crafted
-                    for an elegant and memorable
-                    presence.
-
+                    A distinctive fragrance crafted...
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -659,14 +763,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -674,12 +775,11 @@
 
 
         <!-- =================================================
-             MOONLIGHT PERFUME - OUT OF STOCK
+             MOONLIGHT PERFUME
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/perfume-2.html'">
-
 
             <a href="products/perfume-2.html"
                class="product-image">
@@ -689,36 +789,25 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     PERFUME
                 </p>
 
-
                 <h3>
                     Moonlight Perfume
                 </h3>
-
 
                 <h5>
                     Eau De Parfum
                 </h5>
 
-
                 <p class="product-description">
-
-                    A refined and captivating fragrance
-                    designed to leave a lasting
-                    impression.
-
+                    A refined and captivating...
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -728,14 +817,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -743,12 +829,11 @@
 
 
         <!-- =================================================
-             HAWAS PERFUME - OUT OF STOCK
+             HAWAS PERFUME
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
                  onclick="window.location.href='products/perfume-3.html'">
-
 
             <a href="products/perfume-3.html"
                class="product-image">
@@ -758,35 +843,25 @@
 
             </a>
 
-
             <div class="product-info">
-
 
                 <p class="product-type">
                     Inspired by
                 </p>
 
-
                 <h3>
                     Hawas Perfume
                 </h3>
-
 
                 <h5>
                     Eau De Parfum
                 </h5>
 
-
                 <p class="product-description">
-
-                    A bold and sophisticated fragrance
-                    created for unforgettable occasions.
-
+                    A bold and sophisticated...
                 </p>
 
-
                 <div class="product-bottom">
-
 
                     <div class="price-details">
 
@@ -796,14 +871,11 @@
 
                     </div>
 
-
                     <span class="out-of-stock-btn">
                         OUT OF STOCK
                     </span>
 
-
                 </div>
-
 
             </div>
 
@@ -822,13 +894,11 @@
 <section class="collection-section"
          id="collection">
 
-
     <div class="section-heading center">
 
         <p class="section-label">
             OUR COLLECTION
         </p>
-
 
         <h2>
 
@@ -838,7 +908,6 @@
             </span>
 
         </h2>
-
 
         <p class="section-description">
 
@@ -884,11 +953,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A rich and elegant oud fragrance
-                    with a smooth and sophisticated
-                    character.
-
+                    A rich and elegant...
                 </p>
 
                 <div class="product-bottom">
@@ -953,11 +1018,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A soft, clean and captivating
-                    musk fragrance with an elegant
-                    everyday character.
-
+                    A soft, clean and captivating...
                 </p>
 
                 <div class="product-bottom">
@@ -1022,11 +1083,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A bright and enchanting fragrance
-                    with a smooth and sparkling
-                    character.
-
+                    A bright and enchanting...
                 </p>
 
                 <div class="product-bottom">
@@ -1091,11 +1148,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A nostalgic earthy fragrance
-                    inspired by the beautiful aroma
-                    of first rain on dry soil.
-
+                    A nostalgic earthy fragrance...
                 </p>
 
                 <div class="product-bottom">
@@ -1160,10 +1213,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A bold and charismatic fragrance
-                    made for confident everyday wear.
-
+                    A bold and charismatic...
                 </p>
 
                 <div class="product-bottom">
@@ -1228,11 +1278,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A smooth and elegant fragrance
-                    with a warm and memorable
-                    character.
-
+                    A smooth and elegant...
                 </p>
 
                 <div class="product-bottom">
@@ -1297,11 +1343,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A fresh and refreshing fragrance
-                    with a clean and sophisticated
-                    character.
-
+                    A fresh and refreshing...
                 </p>
 
                 <div class="product-bottom">
@@ -1337,7 +1379,7 @@
 
 
         <!-- =================================================
-             BACCARAT ROUGE ATTAR - OUT OF STOCK
+             BACCARAT ROUGE ATTAR
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
@@ -1358,18 +1400,15 @@
                 </p>
 
                 <h3 onclick="event.stopPropagation(); window.location.href='products/baccarat-rouge.html';">
-    Baccarat Rouge Attar
-</h3>
+                    Baccarat Rouge Attar
+                </h3>
 
                 <h5>
                     14-ML / Alcohol Free
                 </h5>
 
                 <p class="product-description">
-
-                    A deep and sophisticated fragrance
-                    with a rich and luxurious character.
-
+                    A deep and sophisticated...
                 </p>
 
                 <div class="product-bottom">
@@ -1393,64 +1432,74 @@
         </article>
 
 
-       <!-- =================================================
-     RAGHBA ATTAR - OUT OF STOCK
-================================================== -->
+        <!-- =================================================
+             RAGHBA ATTAR
+        ================================================== -->
 
-<article class="product-card out-of-stock-card"
-         onclick="window.location.href='products/raghba.html'">
+        <article class="product-card"
+                 onclick="window.location.href='products/raghba.html'">
 
-    <a href="products/raghba.html"
-       class="product-image"
-       onclick="event.stopPropagation();">
+            <a href="products/raghba.html"
+               class="product-image"
+               onclick="event.stopPropagation();">
 
-        <img src="images/raghba.jpg"
-             alt="Rabba Noir Raghba Attar">
+                <img src="images/raghba.jpg"
+                     alt="Rabba Noir Raghba Attar">
 
-    </a>
+            </a>
 
-    <div class="product-info">
+            <div class="product-info">
 
-        <p class="product-type">
-            ATTAR
-        </p>
+                <p class="product-type">
+                    ATTAR
+                </p>
 
-        <h3 onclick="event.stopPropagation(); window.location.href='products/raghba.html';">
-    Raghba Attar
-</h3>
+                <h3 onclick="event.stopPropagation(); window.location.href='products/raghba.html';">
+                    Raghba Attar
+                </h3>
 
-        <h5>
-            14-ML / Alcohol Free
-        </h5>
+                <h5>
+                    14-ML / Alcohol Free
+                </h5>
 
-        <p class="product-description">
-            A smooth and luxurious fragrance
-            with a refined and elegant character.
-        </p>
+                <p class="product-description">
+                    A smooth and luxurious...
+                </p>
 
-        <div class="product-bottom">
+                <div class="product-bottom">
 
-            <div class="price-details">
+                    <div class="price-details">
 
-                <span class="product-price">
-                    OUT OF STOCK
-                </span>
+                        <span class="product-price">
+                            ₹449
+                        </span>
+
+                        <span class="original-price">
+                            ₹548
+                        </span>
+
+                        <span class="discount-badge">
+                            18% OFF
+                        </span>
+
+                    </div>
+
+                    <a href="products/raghba.html"
+                       class="order-btn">
+
+                        VIEW PRODUCT →
+
+                    </a>
+
+                </div>
 
             </div>
 
-            <span class="out-of-stock-btn">
-                OUT OF STOCK
-            </span>
-
-        </div>
-
-    </div>
-
-</article>
+        </article>
 
 
         <!-- =================================================
-             AMBER WOOD - OUT OF STOCK
+             AMBER WOOD
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
@@ -1479,10 +1528,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A warm woody fragrance with a rich,
-                    elegant and timeless character.
-
+                    A warm woody fragrance...
                 </p>
 
                 <div class="product-bottom">
@@ -1507,7 +1553,7 @@
 
 
         <!-- =================================================
-             BLUE OUD - OUT OF STOCK
+             BLUE OUD
         ================================================== -->
 
         <article class="product-card out-of-stock-card"
@@ -1536,10 +1582,7 @@
                 </h5>
 
                 <p class="product-description">
-
-                    A fresh and modern oud fragrance
-                    with a clean and confident character.
-
+                    A fresh and modern...
                 </p>
 
                 <div class="product-bottom">
@@ -1575,13 +1618,11 @@
 <section class="combo-section"
          id="combos">
 
-
     <div class="section-heading center">
 
         <p class="section-label">
             SPECIAL OFFER
         </p>
-
 
         <h2>
 
@@ -1591,7 +1632,6 @@
             </span>
 
         </h2>
-
 
         <p class="section-description">
 
@@ -1607,7 +1647,6 @@
     <article class="combo-card"
              onclick="window.location.href='products/khamrah-combo.html'">
 
-
         <div class="combo-image">
 
             <img src="images/perfume.jpg"
@@ -1618,11 +1657,9 @@
 
         <div class="combo-content">
 
-
             <p class="combo-label">
                 KHAMRAH + ANY 1 ATTAR
             </p>
-
 
             <h3>
 
@@ -1632,7 +1669,6 @@
                 </span>
 
             </h3>
-
 
             <p class="combo-description">
 
@@ -1644,7 +1680,6 @@
                 both fragrances for just ₹999.
 
             </p>
-
 
             <div class="combo-price">
 
@@ -1672,7 +1707,6 @@
                     CHOOSE YOUR ATTAR
 
                 </label>
-
 
                 <select id="comboAttarHome"
                         class="combo-select"
@@ -1723,7 +1757,6 @@
                 VIEW COMBO →
             </span>
 
-
         </div>
 
     </article>
@@ -1737,13 +1770,11 @@
 
 <section class="features-section">
 
-
     <div class="section-heading center">
 
         <p class="section-label">
             WHY RABBA NOIR
         </p>
-
 
         <h2>
 
@@ -1832,7 +1863,6 @@
 <section class="about-section"
          id="about">
 
-
     <div class="about-image">
 
         <img src="images/herooooo.png"
@@ -1843,11 +1873,9 @@
 
     <div class="about-content">
 
-
         <p class="section-label">
             OUR STORY
         </p>
-
 
         <h2>
 
@@ -1858,7 +1886,6 @@
 
         </h2>
 
-
         <p>
 
             Rabba Noir was created with one
@@ -1866,7 +1893,6 @@
             feel personal.
 
         </p>
-
 
         <p>
 
@@ -1877,14 +1903,12 @@
 
         </p>
 
-
         <p>
 
             Wear it your way.
             Make it yours.
 
         </p>
-
 
     </div>
 
@@ -1897,9 +1921,7 @@
 
 <footer id="footer">
 
-
     <div class="footer-top">
-
 
         <div class="footer-brand">
 
@@ -1909,7 +1931,6 @@
                 RABBA <span>NOIR</span>
 
             </a>
-
 
             <p>
                 The art of fragrance.
@@ -1963,7 +1984,6 @@
 
         </div>
 
-
     </div>
 
 
@@ -1979,7 +1999,6 @@
 
     </div>
 
-
 </footer>
 
 
@@ -1990,9 +2009,7 @@
 <div class="order-modal"
      id="orderModal">
 
-
     <div class="order-box">
-
 
         <button class="close-order"
                 onclick="closeOrderForm()"
@@ -2002,11 +2019,9 @@
 
         </button>
 
-
         <p class="section-label">
             RABBA NOIR
         </p>
-
 
         <h2>
 
@@ -2038,7 +2053,6 @@
                 Your Name
             </label>
 
-
             <input
                 type="text"
                 id="customerName"
@@ -2051,7 +2065,6 @@
             <label for="customerPhone">
                 Mobile Number
             </label>
-
 
             <input
                 type="tel"
@@ -2069,7 +2082,6 @@
                 Quantity
             </label>
 
-
             <input
                 type="number"
                 id="quantity"
@@ -2083,7 +2095,6 @@
             <label for="customerAddress">
                 Delivery Address
             </label>
-
 
             <textarea
                 id="customerAddress"
@@ -2107,7 +2118,6 @@
 
 
         <div id="orderMessage"></div>
-
 
     </div>
 
