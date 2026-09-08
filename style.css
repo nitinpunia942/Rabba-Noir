@@ -1306,12 +1306,15 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .order-btn {
-        width: auto;
-        min-width: 85px;
-        padding: 10px 14px;
-        font-size: 8px;
-        letter-spacing: 1.2px;
-        border-radius: 2px;
+    .product-card .order-btn {
+        width: auto !important;
+        min-width: 82px !important;
+        max-width: 90px !important;
+        height: 38px !important;
+        padding: 0 12px !important;
+        font-size: 8px !important;
+        letter-spacing: 1px !important;
+        line-height: 38px !important;
+        white-space: nowrap !important;
     }
 }
