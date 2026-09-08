@@ -1241,16 +1241,22 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    .detail-order {
-        flex-direction: column;
-    }
+    /* MOBILE PRODUCT ORDER */
 
-    .quantity-box {
-        justify-content: center;
+    .detail-order {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
     }
 
     .detail-order-btn {
+        flex: 0 0 auto;
+        width: auto;
         height: 50px;
+        padding: 0 18px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        white-space: nowrap;
     }
 
     .product-grid {
@@ -1268,6 +1274,7 @@ footer {
     }
 }
 
+
 .khamrah-img {
     width: 70% !important;
     height: 220px !important;
@@ -1275,6 +1282,7 @@ footer {
     display: block !important;
     margin: 0 auto !important;
 }
+
 
 /* =========================================================
    OUT OF STOCK
@@ -1303,27 +1311,4 @@ footer {
 
     color: var(--muted);
     font-size: 10px;
-}
-
-@media (max-width: 600px) {
-    .detail-order {
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-    }
-
-    .detail-order .detail-order-btn {
-        width: auto !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        flex: 0 0 auto !important;
-        height: 52px !important;
-        padding: 0 18px !important;
-        font-size: 10px !important;
-        letter-spacing: 1px !important;
-        white-space: nowrap !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
 }
